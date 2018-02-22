@@ -1,0 +1,1 @@
+//= require fontawesome-all.min
