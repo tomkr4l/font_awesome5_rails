@@ -8,7 +8,7 @@ module FontAwesome
         classes += options[:class].split(" ") if options[:class].present?
         classes << "fa-#{options[:size]}" if options[:size].present?
         classes << options[:animation].split(" ").map{|s| "fa-#{s}"} if options[:animation].present?
-        classes = classes.join(" ")
+        classes = classes.uniq.join(" ")
         tags = []
         if options[:text].present?
           content_tag :span do

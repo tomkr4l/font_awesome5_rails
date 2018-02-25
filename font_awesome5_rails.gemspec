@@ -9,14 +9,15 @@ Gem::Specification.new do |s|
   s.version     = FontAwesome5Rails::VERSION
   s.authors     = ["tomkra"]
   s.email       = ["kralutomas@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/tomkra/font_awesome5_rails"
   s.summary     = "an asset gemification of the font-awesome 5 icon font library"
   s.description = "font_awesome5_rails provides Font-Awesome 5 support."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  s.add_dependency "rails", "~> 5.1.5"
+  s.add_dependency "rails", "~> 4.0.0"
 
   s.add_development_dependency "sass-rails"
+  s.required_ruby_version = ">= 1.9.3"
 end
