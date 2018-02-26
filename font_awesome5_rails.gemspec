@@ -14,9 +14,11 @@ Gem::Specification.new do |s|
   s.description = "font_awesome5_rails provides Font-Awesome 5 support."
   s.license     = "MIT"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  s.files = Dir["{app,config,bin,lib,spec}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
+  s.add_dependency "railties", ">= 4.2", "< 5.2"
 
+  s.add_development_dependency "activesupport"
   s.add_development_dependency "sass-rails"
-  s.required_ruby_version = ">= 1.9.3"
+  s.required_ruby_version = ">= 2.0.0"
 end

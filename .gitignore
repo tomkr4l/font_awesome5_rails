@@ -3,3 +3,8 @@ log/*.log
 pkg/
 .idea/*
 .byebug_history
+spec/examples.txt
+spec/dummy/db/*.sqlite3
+spec/dummy/db/*.sqlite3-journal
+spec/dummy/log/*.log
+spec/dummy/tmp/

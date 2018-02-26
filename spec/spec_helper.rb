@@ -16,10 +16,17 @@
 ENV['RAILS_ENV'] ||= 'test'
 
 require 'byebug'
-require './app/helpers/font_awesome/rails/icon_helper'
-include FontAwesome::Rails::IconHelper
+require File.expand_path('../dummy/config/application', __FILE__)
+#require './app/helpers/font_awesome/rails/icon_helper'
+
+require 'font_awesome5_rails'
+require 'rspec'
+
+Dummy::Application.initialize!
 
 RSpec.configure do |config|
+  config.include FontAwesome::Rails::IconHelper
+  config.include ActionView::Helpers
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
