@@ -38,8 +38,5 @@ describe FontAwesome5Rails do
       expect(fa_icon 'camera-retro', text: 'Camera', style: 'color: Tomato;').to have_tag('span', text: 'Camera', with: {style: 'padding-left: 5px;color: Tomato;'})
     end
   end
-
-  descri
-
-
+  
 end
