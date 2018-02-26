@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "railties", ">= 4.2", "< 5.2"
 
-  s.add_development_dependency "activesupport"
+  s.add_development_dependency "activesupport", ">= 4.2"
   s.add_development_dependency "sass-rails"
   s.required_ruby_version = ">= 2.0.0"
 end

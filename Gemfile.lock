@@ -104,7 +104,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activesupport
+  activesupport (>= 4.2)
   byebug
   font_awesome5_rails!
   rspec
