@@ -4,6 +4,26 @@ describe FontAwesome5Rails do
   include RSpecHtmlMatchers
   include ActionView::Context
 
+  describe 'files' do
+    it 'should have correct dirs' do
+      expect(Dir.exists?('./app/assets/images')).to be_truthy
+      expect(Dir.exists?('./app/assets/javascripts')).to be_truthy
+      expect(Dir.exists?('./app/assets/stylesheets')).to be_truthy
+      expect(Dir.exists?('./app/helpers/font_awesome/rails')).to be_truthy
+    end
+
+    it 'should have correct files' do
+      expect(File.exists?('./app/helpers/font_awesome/rails/icon_helper.rb')).to be_truthy
+      expect(File.exists?('./app/assets/images/fa-brands.svg')).to be_truthy
+      expect(File.exists?('./app/assets/images/fa-regular.svg')).to be_truthy
+      expect(File.exists?('./app/assets/images/fa-solid.svg')).to be_truthy
+      expect(File.exists?('./app/assets/javascripts/font_awesome5.js')).to be_truthy
+      expect(File.exists?('./app/assets/javascripts/fontawesome-all.min.js')).to be_truthy
+      expect(File.exists?('./app/assets/stylesheets/fa-svg-with-js.css')).to be_truthy
+      expect(File.exists?('./app/assets/stylesheets/font_awesome5.css')).to be_truthy
+    end
+  end
+
   describe 'tags' do
     it 'should return correct type tags' do
       expect(fa_icon 'camera-retro').to eq '<i class="fas fa-camera-retro"></i>'
