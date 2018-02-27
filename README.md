@@ -1,4 +1,7 @@
 # FontAwesome5Rails
+[![Build Status](https://secure.travis-ci.org/tomkra/font_awesome5_rails.svg)](http://travis-ci.org/tomkra/font_awesome5_rails)
+[![HitCount](http://hits.dwyl.io/tomkra/tomkra/font_awesome5_rails.svg)](http://hits.dwyl.io/tomkra/tomkra/font_awesome5_rails)
+
 font_awesome5_rails provides the [Font-Awesome5](https://fontawesome.com/) web fonts, stylesheets and javascripts as a Rails engine for use with the asset pipeline and with backwards compatibility with [font-awesome-rails](https://github.com/bokmann/font-awesome-rails) gem.
 
 This gem provides only Free icons from Font-Awesome.
@@ -44,24 +47,27 @@ fa_icon('camera-retro', class: 'my-class', text: 'Camera', size: '3x')
 In Font Awesome 5 there are several different types of icons. In font_awesome5_rails gem default icon type is ```solid```.
 If you want to use different icon style you can do this through ```type``` attribute.
 
-| Style         | type: |
-| ------------- |-------|
-| Solid         | :fas  |
-| Regular       | :far  |
-| Light         | :fal  |
-| Brand         | :fab  |
+| Style         | type: | type:  |
+| ------------- |-------|--------|
+| Solid         | :fas  |:solid  |
+| Regular       | :far  |:regular|
+| Light         | :fal  |:light  |
+| Brand         | :fab  |:brand  | 
 
 
 ```ruby
-fa_icon('camera-retro', type: :fas)
+fa_icon('camera-retro', type: :solid) #Default
 # => <i class="fas fa-camera-retro"></i>
  
-fa_icon('camera-retro', type: :far)
+fa_icon('camera-retro', type: :regular)
 # => <i class="far fa-camera-retro"></i>
   
-fa_icon('camera-retro', type: :fal)
+fa_icon('camera-retro', type: :light)
 # => <i class="fal fa-camera-retro"></i>
  
+fa_icon('camera-retro', type: :brand)
+# => <i class="fab fa-camera-retro"></i>
+     
 fa_icon('camera-retro', type: :fab)
 # => <i class="fab fa-camera-retro"></i>
      

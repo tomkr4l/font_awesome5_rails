@@ -21,6 +21,9 @@ describe FontAwesome5Rails do
       expect(File.exists?('./app/assets/javascripts/fontawesome-all.min.js')).to be_truthy
       expect(File.exists?('./app/assets/stylesheets/fa-svg-with-js.css')).to be_truthy
       expect(File.exists?('./app/assets/stylesheets/font_awesome5.css')).to be_truthy
+      expect(File.exists?('./lib/font_awesome5_rails/engine.rb')).to be_truthy
+      expect(File.exists?('./lib/font_awesome5_rails/version.rb')).to be_truthy
+      expect(File.exists?('./lib/font_awesome5_rails/fa_icon_parser.rb')).to be_truthy
     end
   end
 
@@ -31,6 +34,10 @@ describe FontAwesome5Rails do
       expect(fa_icon 'camera-retro', type: :far).to eq '<i class="far fa-camera-retro"></i>'
       expect(fa_icon 'camera-retro', type: :fal).to eq '<i class="fal fa-camera-retro"></i>'
       expect(fa_icon 'camera-retro', type: :fab).to eq '<i class="fab fa-camera-retro"></i>'
+      expect(fa_icon 'camera-retro', type: :solid).to eq '<i class="fas fa-camera-retro"></i>'
+      expect(fa_icon 'camera-retro', type: :regular).to eq '<i class="far fa-camera-retro"></i>'
+      expect(fa_icon 'camera-retro', type: :light).to eq '<i class="fal fa-camera-retro"></i>'
+      expect(fa_icon 'camera-retro', type: :brand).to eq '<i class="fab fa-camera-retro"></i>'
     end
 
     it 'should return correct class tags' do
