@@ -1,4 +1,4 @@
 module FontAwesome5Rails
-  FA_VERSION = '5.0.6'
-  VERSION = '0.1.0'
+  FA_VERSION = '5.0.7'
+  VERSION = '0.2.0'
 end

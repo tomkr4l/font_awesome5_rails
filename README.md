@@ -40,6 +40,33 @@ fa_icon('camera-retro', class: 'my-class', text: 'Camera', size: '3x')
 # =>  <span>Camera</span>
 ```
 
+### Solid, Regular, Light, Brand icon types
+In Font Awesome 5 there are several different types of icons. In font_awesome5_rails gem default icon type is ```solid```.
+If you want to use different icon style you can do this through ```type``` attribute.
+
+| Style         | type: |
+| ------------- |-------|
+| Solid         | :fas  |
+| Regular       | :far  |
+| Light         | :fal  |
+| Brand         | :fab  |
+
+
+```ruby
+fa_icon('camera-retro', type: :fas)
+# => <i class="fas fa-camera-retro"></i>
+ 
+fa_icon('camera-retro', type: :far)
+# => <i class="far fa-camera-retro"></i>
+  
+fa_icon('camera-retro', type: :fal)
+# => <i class="fal fa-camera-retro"></i>
+ 
+fa_icon('camera-retro', type: :fab)
+# => <i class="fab fa-camera-retro"></i>
+     
+```  
+
 ### Animations and data attributes
 FontAwesome 5 provides new animations and data attributes. Here are some examples how to use them:
 ```ruby
@@ -55,3 +82,5 @@ More animation and data attributes can be found on [FontAwesome documentation](h
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+[Font Awesome5 License](https://fontawesome.com/license).
