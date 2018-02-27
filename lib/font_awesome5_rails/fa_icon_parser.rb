@@ -1,5 +1,5 @@
 class FaIconParser
-  attr_accessor :icon, :options, :data, :style, :text
+  attr_reader :icon, :options, :data, :style, :text
 
   def initialize(icon, options)
     @icon = icon
@@ -27,8 +27,6 @@ class FaIconParser
     end
   end
 
-  private
-
   def prepend_fa(string)
     "fa-#{string}"
   end
@@ -36,6 +34,8 @@ class FaIconParser
   def arr_with_fa(array)
     array.split(" ").map{ |s| prepend_fa(s) }
   end
+
+  private
 
   def get_all_classes
     tmp = []
