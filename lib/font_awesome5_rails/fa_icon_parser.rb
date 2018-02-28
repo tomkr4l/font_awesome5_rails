@@ -13,6 +13,10 @@ class FaIconParser
     @classes ||= get_all_classes
   end
 
+  def sizes
+    @sizes ||= @options[:size].nil? ? "" : arr_with_fa(@options[:size]).uniq.join(" ").strip
+  end
+
   def icon_type(type)
     return "fas" if type.nil?
     case type.to_s
@@ -44,6 +48,6 @@ class FaIconParser
     tmp += @options[:class].split(" ") unless @options[:class].nil?
     tmp += arr_with_fa(@options[:size]) unless @options[:size].nil?
     tmp += arr_with_fa(@options[:animation]) unless @options[:animation].nil?
-    tmp.uniq.join(" ")
+    tmp.uniq.join(" ").strip
   end
 end
