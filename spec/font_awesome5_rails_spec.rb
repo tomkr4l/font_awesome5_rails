@@ -71,8 +71,7 @@ describe FontAwesome5Rails do
       expect(fa_icon 'camera-retro', text: 'Camera').to have_tag('i', with: { class: 'fas fa-camera-retro'})
       expect(fa_icon 'camera-retro', text: 'Camera').to have_tag('span', text: 'Camera')
       expect(fa_icon 'camera-retro', text: 'Camera', style: 'color: Tomato;').to have_tag('span', text: 'Camera', with: {style: 'color: Tomato;'})
-      expect(fa_icon 'camera-retro', text: 'Camera', style: 'color: Tomato;').to eq '<span><i class="fas fa-camera-retro" style="color: Tomato;"></i><span class="fa5-text " style="color: Tomato;">Camera</span></span>'
-      expect(fa_icon 'camera-retro', text: 'Camera', size: '3x').to have_tag('span', text: 'Camera', with: {class: 'fa-3x'})
+      expect(fa_icon 'camera-retro', text: 'Camera', size: '3x').to have_tag('span', text: 'Camera', with: {class: 'fa5-text fa-3x'})
     end
   end
   

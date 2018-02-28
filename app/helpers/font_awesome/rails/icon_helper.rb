@@ -9,10 +9,8 @@ module FontAwesome
         if parser.text.nil?
           content_tag(:i, nil, class: parser.classes, style: parser.style, data: parser.data)
         else
-          content_tag :span do
-            content_tag(:i, nil, class: parser.classes, style: parser.style, data: parser.data) +
-            content_tag(:span, parser.text, class: "fa5-text #{parser.sizes}", style: parser.style)
-          end
+          content_tag(:i, nil, class: parser.classes, style: parser.style, data: parser.data) +
+          content_tag(:span, parser.text, class: "fa5-text #{parser.sizes}", style: parser.style)
         end
       end
 
