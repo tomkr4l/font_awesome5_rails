@@ -81,17 +81,19 @@ describe FontAwesome5Rails do
       expect(fa_layered_icon(aligned: true){ fa_icon 'circle' }).to eq '<span class="fa-layers fa-fw"><i class="fas fa-circle"></i></span>'
       expect(fa_layered_icon(aligned: false){ fa_icon 'circle' }).to eq '<span class="fa-layers"><i class="fas fa-circle"></i></span>'
       expect(fa_layered_icon(class: 'test'){ fa_icon 'circle' }).to eq '<span class="fa-layers fa-fw test"><i class="fas fa-circle"></i></span>'
+
       expect(fa_layered_icon(size: '3x'){ fa_icon 'circle' })
-          .to eq '<div class="fa-3x"><span class="fa-layers fa-fw test"><i class="fas fa-circle"></i></span></div>'
+          .to eq '<div class="fa-3x"><span class="fa-layers fa-fw"><i class="fas fa-circle"></i></span></div>'
+
       expect(fa_layered_icon(style: 'background: MistyRose'){ fa_icon 'circle' })
-          .to eq '<span class="fa-layers fa-fw test" style="background: MistyRose"><i class="fas fa-circle"></i></span>'
+          .to eq '<span class="fa-layers fa-fw" style="background: MistyRose"><i class="fas fa-circle"></i></span>'
+
 
       expect(
         fa_layered_icon do
-          fa_icon 'circle'
-          fa_icon 'times', class: 'fa-inverse'
+          (fa_icon 'circle') + (fa_icon 'times')
         end
-      ).to eq '<span class="fa-layers fa-fw"><i class="fas fa-circle"></i><i class="fas fa-times fa-inverse"></i></span>'
+      ).to eq '<span class="fa-layers fa-fw"><i class="fas fa-circle"></i><i class="fas fa-times"></i></span>'
     end
   end
   

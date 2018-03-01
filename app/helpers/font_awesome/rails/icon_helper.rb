@@ -1,4 +1,5 @@
 require "font_awesome5_rails/parsers/fa_icon_parser"
+require "font_awesome5_rails/parsers/fa_layered_icon_parser"
 
 module FontAwesome
   module Rails
@@ -15,15 +16,12 @@ module FontAwesome
       end
 
       def fa_layered_icon(options = {}, &block)
-        #TODO text, counter
-        classes = ["fa-layers #{'fa-fw' if options[:aligned].nil? || options[:aligned] == true}"]
-        classes += options[:class].split(" ") unless options[:class].nil?
-        classes.uniq.join(" ").strip
-        if options[:size].nil?
-          content_tag(:span, class: classes, style: options[:style], &block)
+        parser = FaLayeredIconParser.new(options)
+        if parser.size.nil?
+          content_tag(:span, class: parser.classes, style: parser.style, &block)
         else
-          content_tag :div, class: "fa-#{options[:size]}" do
-            content_tag(:span, class: classes, style: options[:style], &block)
+          content_tag :div, class: "fa-#{parser.size}" do
+            content_tag(:span, class: parser.classes, style: parser.style, &block)
           end
         end
       end
