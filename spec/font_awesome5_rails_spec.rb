@@ -18,16 +18,16 @@ describe FontAwesome5Rails do
       expect(File.exists?('./app/assets/images/fa-regular.svg')).to be_truthy
       expect(File.exists?('./app/assets/images/fa-solid.svg')).to be_truthy
       expect(File.exists?('./app/assets/javascripts/font_awesome5.js')).to be_truthy
-      expect(File.exists?('./app/assets/javascripts/fontawesome-all.min.js')).to be_truthy
+      expect(File.exists?('./app/assets/javascripts/fontawesome.min.js')).to be_truthy
       expect(File.exists?('./app/assets/stylesheets/fa-svg-with-js.css')).to be_truthy
       expect(File.exists?('./app/assets/stylesheets/font_awesome5.css')).to be_truthy
       expect(File.exists?('./lib/font_awesome5_rails/engine.rb')).to be_truthy
       expect(File.exists?('./lib/font_awesome5_rails/version.rb')).to be_truthy
-      expect(File.exists?('./lib/font_awesome5_rails/fa_icon_parser.rb')).to be_truthy
+      expect(File.exists?('./lib/font_awesome5_rails/parsers/fa_icon_parser.rb')).to be_truthy
     end
   end
 
-  describe 'tags' do
+  describe 'fa_icon tags' do
     it 'should return correct type tags' do
       expect(fa_icon 'camera-retro').to eq '<i class="fas fa-camera-retro"></i>'
       expect(fa_icon 'camera-retro', type: :fas).to eq '<i class="fas fa-camera-retro"></i>'
@@ -72,6 +72,26 @@ describe FontAwesome5Rails do
       expect(fa_icon 'camera-retro', text: 'Camera').to have_tag('span', text: 'Camera')
       expect(fa_icon 'camera-retro', text: 'Camera', style: 'color: Tomato;').to have_tag('span', text: 'Camera', with: {style: 'color: Tomato;'})
       expect(fa_icon 'camera-retro', text: 'Camera', size: '3x').to have_tag('span', text: 'Camera', with: {class: 'fa5-text fa-3x'})
+    end
+  end
+
+  describe 'fa_layered_icon tags' do
+    it 'should return correct tags' do
+      expect(fa_layered_icon{ fa_icon 'circle'}).to eq '<span class="fa-layers fa-fw"><i class="fas fa-circle"></i></span>'
+      expect(fa_layered_icon(aligned: true){ fa_icon 'circle' }).to eq '<span class="fa-layers fa-fw"><i class="fas fa-circle"></i></span>'
+      expect(fa_layered_icon(aligned: false){ fa_icon 'circle' }).to eq '<span class="fa-layers"><i class="fas fa-circle"></i></span>'
+      expect(fa_layered_icon(class: 'test'){ fa_icon 'circle' }).to eq '<span class="fa-layers fa-fw test"><i class="fas fa-circle"></i></span>'
+      expect(fa_layered_icon(size: '3x'){ fa_icon 'circle' })
+          .to eq '<div class="fa-3x"><span class="fa-layers fa-fw test"><i class="fas fa-circle"></i></span></div>'
+      expect(fa_layered_icon(style: 'background: MistyRose'){ fa_icon 'circle' })
+          .to eq '<span class="fa-layers fa-fw test" style="background: MistyRose"><i class="fas fa-circle"></i></span>'
+
+      expect(
+        fa_layered_icon do
+          fa_icon 'circle'
+          fa_icon 'times', class: 'fa-inverse'
+        end
+      ).to eq '<span class="fa-layers fa-fw"><i class="fas fa-circle"></i><i class="fas fa-times fa-inverse"></i></span>'
     end
   end
   
