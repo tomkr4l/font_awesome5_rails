@@ -1,7 +1,7 @@
 require "font_awesome5_rails/parsers/fa_icon_parser"
 require "font_awesome5_rails/parsers/fa_layered_icon_parser"
 
-module FontAwesome
+module FontAwesome5
   module Rails
     module IconHelper
 
@@ -25,7 +25,6 @@ module FontAwesome
           end
         end
       end
-
     end
   end
 end

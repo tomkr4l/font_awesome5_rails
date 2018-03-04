@@ -9,11 +9,11 @@ describe FontAwesome5Rails do
       expect(Dir.exists?('./app/assets/images')).to be_truthy
       expect(Dir.exists?('./app/assets/javascripts')).to be_truthy
       expect(Dir.exists?('./app/assets/stylesheets')).to be_truthy
-      expect(Dir.exists?('./app/helpers/font_awesome/rails')).to be_truthy
+      expect(Dir.exists?('./app/helpers/font_awesome5/rails')).to be_truthy
     end
 
     it 'should have correct files' do
-      expect(File.exists?('./app/helpers/font_awesome/rails/icon_helper.rb')).to be_truthy
+      expect(File.exists?('./app/helpers/font_awesome5/rails/icon_helper.rb')).to be_truthy
       expect(File.exists?('./app/assets/images/fa-brands.svg')).to be_truthy
       expect(File.exists?('./app/assets/images/fa-regular.svg')).to be_truthy
       expect(File.exists?('./app/assets/images/fa-solid.svg')).to be_truthy
