@@ -84,6 +84,8 @@ fa_icon('camera-retro', data: {'fa-transform': 'rotate-90'})
 
 ```
 
+In FontAwesome5 the text is right behind icon. For better readability text has defaultly set to ```padding-left: 5px;```. If you want to override this setting, you can do that through ```.fa5-text``` class in css styles.
+
 ### Layered and Stacked icons
 FontAwesome 5 newly provides layred icons. For backward compatibility there were preserved ```fa_stacked_icon``` helper, but you can acomplish the same result with ```fa_layered_icon```.
 
