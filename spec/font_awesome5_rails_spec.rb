@@ -75,6 +75,28 @@ describe FontAwesome5Rails do
     end
   end
 
+  describe 'fa_stacked_icon tags' do
+    it 'should return correct tags' do
+      expect(fa_stacked_icon 'camera', base: 'circle')
+          .to eq '<span class="fa-stack"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-camera fa-stack-1x"></i></span>'
+
+      expect(fa_stacked_icon 'camera inverse', base: 'circle')
+          .to eq '<span class="fa-stack"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-camera fa-inverse fa-stack-1x"></i></span>'
+
+      expect(fa_stacked_icon 'camera inverse', base: 'circle inverse')
+          .to eq '<span class="fa-stack"><i class="fas fa-circle fa-inverse fa-stack-2x"></i><i class="fas fa-camera fa-inverse fa-stack-1x"></i></span>'
+
+      expect(fa_stacked_icon 'camera', base: 'circle', type: :far, reverse: false)
+          .to eq '<span class="fa-stack"><i class="far fa-circle fa-stack-2x"></i><i class="far fa-camera fa-stack-1x"></i></span>'
+
+      expect(fa_stacked_icon 'camera', base: 'circle', reverse: true)
+          .to eq '<span class="fa-stack"><i class="fas fa-camera fa-stack-1x"></i><i class="fas fa-circle fa-stack-2x"></i></span>'
+
+      expect(fa_stacked_icon 'camera', base: 'circle', text: 'Text!')
+          .to eq '<span class="fa-stack"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-camera fa-stack-1x"></i></span>Text!'
+    end
+  end
+
   describe 'fa_layered_icon tags' do
     it 'should return correct tags' do
       expect(fa_layered_icon{ fa_icon 'circle'}).to eq '<span class="fa-layers fa-fw"><i class="fas fa-circle"></i></span>'

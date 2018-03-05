@@ -1,5 +1,6 @@
 require "font_awesome5_rails/parsers/fa_icon_parser"
 require "font_awesome5_rails/parsers/fa_layered_icon_parser"
+require "font_awesome5_rails/parsers/fa_stacked_icon_parser"
 
 module FontAwesome5
   module Rails
@@ -15,6 +16,18 @@ module FontAwesome5
         end
       end
 
+
+      def fa_stacked_icon(icon, options = {})
+        parser = FaStackedIconParser.new(icon, options)
+
+        tags = content_tag :span, class: parser.span_classes do
+          content_tag(:i, nil, class: (parser.reverse ? parser.second_icon_classes : parser.first_icon_classes) ) +
+          content_tag(:i, nil, class: (parser.reverse ? parser.first_icon_classes : parser.second_icon_classes) )
+        end
+        tags += parser.text unless parser.text.nil?
+        tags
+      end
+
       def fa_layered_icon(options = {}, &block)
         parser = FaLayeredIconParser.new(options)
         if parser.size.nil?
@@ -25,6 +38,7 @@ module FontAwesome5
           end
         end
       end
+
     end
   end
 end
