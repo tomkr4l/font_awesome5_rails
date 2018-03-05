@@ -24,6 +24,9 @@ describe FontAwesome5Rails do
       expect(File.exists?('./lib/font_awesome5_rails/engine.rb')).to be_truthy
       expect(File.exists?('./lib/font_awesome5_rails/version.rb')).to be_truthy
       expect(File.exists?('./lib/font_awesome5_rails/parsers/fa_icon_parser.rb')).to be_truthy
+      expect(File.exists?('./lib/font_awesome5_rails/parsers/fa_layered_icon_parser.rb')).to be_truthy
+      expect(File.exists?('./lib/font_awesome5_rails/parsers/fa_stacked_icon_parser.rb')).to be_truthy
+      expect(File.exists?('./lib/font_awesome5_rails/parsers/parse_methods.rb')).to be_truthy
     end
   end
 
