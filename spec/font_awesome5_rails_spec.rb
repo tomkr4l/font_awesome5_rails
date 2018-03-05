@@ -18,7 +18,7 @@ describe FontAwesome5Rails do
       expect(File.exists?('./app/assets/images/fa-regular.svg')).to be_truthy
       expect(File.exists?('./app/assets/images/fa-solid.svg')).to be_truthy
       expect(File.exists?('./app/assets/javascripts/font_awesome5.js')).to be_truthy
-      expect(File.exists?('./app/assets/javascripts/fontawesome.min.js')).to be_truthy
+      expect(File.exists?('./app/assets/javascripts/fontawesome-all.min.js')).to be_truthy
       expect(File.exists?('./app/assets/stylesheets/fa-svg-with-js.css')).to be_truthy
       expect(File.exists?('./app/assets/stylesheets/font_awesome5.css')).to be_truthy
       expect(File.exists?('./lib/font_awesome5_rails/engine.rb')).to be_truthy
