@@ -25,7 +25,7 @@ require 'rspec'
 Dummy::Application.initialize!
 
 RSpec.configure do |config|
-  config.include FontAwesome::Rails::IconHelper
+  config.include FontAwesome5::Rails::IconHelper
   config.include ActionView::Helpers
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest

@@ -1,4 +1,8 @@
+require_relative 'parse_methods'
+
 class FaIconParser
+  include ParseMethods
+
   attr_reader :icon, :options, :data, :style, :text
 
   def initialize(icon, options)
@@ -13,26 +17,8 @@ class FaIconParser
     @classes ||= get_all_classes
   end
 
-  def icon_type(type)
-    return "fas" if type.nil?
-    case type.to_s
-      when "far", "regular"
-        "far"
-      when "fal", "light"
-        "fal"
-      when "fab", "brand"
-        "fab"
-      else
-        "fas"
-    end
-  end
-
-  def prepend_fa(string)
-    "fa-#{string}"
-  end
-
-  def arr_with_fa(array)
-    array.split(" ").map{ |s| prepend_fa(s) }
+  def sizes
+    @sizes ||= @options[:size].nil? ? "" : arr_with_fa(@options[:size]).uniq.join(" ").strip
   end
 
   private
@@ -44,6 +30,6 @@ class FaIconParser
     tmp += @options[:class].split(" ") unless @options[:class].nil?
     tmp += arr_with_fa(@options[:size]) unless @options[:size].nil?
     tmp += arr_with_fa(@options[:animation]) unless @options[:animation].nil?
-    tmp.uniq.join(" ")
+    tmp.uniq.join(" ").strip
   end
 end

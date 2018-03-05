@@ -84,6 +84,64 @@ fa_icon('camera-retro', data: {'fa-transform': 'rotate-90'})
 
 ```
 
+### Layered and Stacked icons
+FontAwesome 5 newly provides layred icons. For backward compatibility there were preserved ```fa_stacked_icon``` helper, but you can acomplish the same result with ```fa_layered_icon```.
+
+#### Layered icon examples
+```fa_layered_icon``` takes options and block of code that will be rendered inside.
+
+Following ```fa_layered_icon``` examples are written in ```haml```.
+```ruby
+= fa_layered_icon do
+  = fa_icon 'circle'
+# => <span class="fa-layers fa-fw">
+# =>   <i class="fas fa-circle"></i>
+# => </span>  
+
+= fa_layered_icon style: 'background: MistyRose', size: '4x' do
+  = fa_icon 'circle', style: 'color: Tomato'
+  = fa_icon 'times', class: 'fa-inverse', data: { fa_transform: 'shrink-6' }
+# => <div class="fa-4x">
+# =>   <span class="fa-layers fa-fw" style="background: MistyRose">
+# =>     <i class="fas fa-circle" style="color: Tomato"></i>
+# =>     <i class="fas fa-times fa-inverse" data-fa-transform="shrink-6"></i>
+# =>   </span> 
+# => </div>
+
+= fa_layered_icon aligned: :false do
+  = fa_icon 'circle'
+  %span.fa-layers-text= "Text"
+  %span.fa-layers-counter= "1,419"
+# => <span class="fa-layers">
+# =>   <i class="fas fa-circle"></i>
+# =>   <span class="fa-layers-counter">1,419</span>
+# => </span>  
+```
+
+#### Stacked icon examples
+```ruby
+fa_stacked_icon('camera', base: 'circle')
+# => <span class="fa-stack">
+# =>   <i class="fas fa-circle fa-stack-2x"></i>
+# =>   <i class="fas fa-camera fa-stack-1x"></i>
+# => </span>
+
+fa_stacked_icon('camera inverse', base: 'circle', type: :fas, class: 'my-class') #Default :fas is default type
+# => <span class="fa-stack my-class">
+# =>   <i class="fas fa-circle fa-stack-2x"></i>
+# =>   <i class="fas fa-camera fa-inverse fa-stack-1x"></i>
+# => </span>
+
+fa_stacked_icon('camera', base: 'circle', reverse: true, text: 'Text!') #Default: reverse: false
+# => <span class="fa-stack">
+# =>   <i class="fas fa-circle fa-stack-1x"></i>
+# =>   <i class="fas fa-camera fa-stack-2x"></i>
+# => </span>Text!
+
+```
+
+More examples can be found in specs.
+
 More animation and data attributes can be found on [FontAwesome documentation](https://fontawesome.com/how-to-use/svg-with-js).
 
 ## License

@@ -1,1 +1,1 @@
-//= require fontawesome-all.min
+//= require fontawesome.min
