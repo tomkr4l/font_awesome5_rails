@@ -6,7 +6,21 @@ font_awesome5_rails provides the [Font-Awesome5](https://fontawesome.com/) web f
 
 This gem provides only Free icons from Font-Awesome.
 
+## Table of Contents
+**[Instalation](#instalation)** <br />
+**[Usage](#usage)** <br />
+  - **[Basic usage](#basic-usage)** <br />
+  - **[Solid, Regular, Light, Brand icon types](#solid-regular-light-brand-icon-types)** <br />
+  - **[Animations and data attributes](#animations-and-data-attributes)** <br />
+  - **[Layered and Stacked icons](#layered-and-stacked-icons)** <br />
+
+**[Use as images](#use-as-images)** <br />
+
+
 ## Installation
+Now you have two options how to include FontAwesome 5 icons. First option is to use ```SVG``` and ```JS``` files which is recommended by FontAwesome team. However you can use icons as ```webfont with CSS``` but you will not be able to use new FA5 features as animations or ```layered_icons```. Choose one installation option from above:
+
+### 1. Install as SVG with JS (recommended)
 Add this line to your application's Gemfile:
 
 ```ruby
@@ -25,6 +39,12 @@ or if you prefer scss add this to your `application.css.scss` file:
 In your `application.js`, include the javascript file:
 ```javascript
 #= require font_awesome5
+```
+
+### 2. Install as webfont with CSS (old way)
+In your `application.css`, include the css file:
+```css
+ *= require font_awesome5_webfont
 ```
 
 ## Usage
@@ -140,6 +160,14 @@ fa_stacked_icon('camera', base: 'circle', reverse: true, text: 'Text!') #Default
 # =>   <i class="fas fa-camera fa-stack-2x"></i>
 # => </span>Text!
 
+```
+
+## Use as images
+From version ```0.2.3``` you can include icons as images in your views.
+```ruby
+image_tag('fa5/solid/camera.svg')
+image_tag('fa5/brand/facebook.svg')
+image_tag('fa5/regular/bell.svg', width: '100px', class: 'my-img')
 ```
 
 More examples can be found in specs.
