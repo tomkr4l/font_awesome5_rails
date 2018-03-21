@@ -7,6 +7,9 @@ describe FontAwesome5Rails do
   describe 'files' do
     it 'should have correct dirs' do
       expect(Dir.exists?('./app/assets/images')).to be_truthy
+      expect(Dir.exists?('./app/assets/images/fa5/brands')).to be_truthy
+      expect(Dir.exists?('./app/assets/images/fa5/regular')).to be_truthy
+      expect(Dir.exists?('./app/assets/images/fa5/solid')).to be_truthy
       expect(Dir.exists?('./app/assets/javascripts')).to be_truthy
       expect(Dir.exists?('./app/assets/stylesheets')).to be_truthy
       expect(Dir.exists?('./app/helpers/font_awesome5/rails')).to be_truthy
@@ -14,13 +17,12 @@ describe FontAwesome5Rails do
 
     it 'should have correct files' do
       expect(File.exists?('./app/helpers/font_awesome5/rails/icon_helper.rb')).to be_truthy
-      expect(File.exists?('./app/assets/images/fa-brands.svg')).to be_truthy
-      expect(File.exists?('./app/assets/images/fa-regular.svg')).to be_truthy
-      expect(File.exists?('./app/assets/images/fa-solid.svg')).to be_truthy
       expect(File.exists?('./app/assets/javascripts/font_awesome5.js')).to be_truthy
       expect(File.exists?('./app/assets/javascripts/fontawesome-all.min.js')).to be_truthy
       expect(File.exists?('./app/assets/stylesheets/fa-svg-with-js.css')).to be_truthy
       expect(File.exists?('./app/assets/stylesheets/font_awesome5.css')).to be_truthy
+      expect(File.exists?('./app/assets/stylesheets/fontawesome-all.min.css')).to be_truthy
+      expect(File.exists?('./app/assets/stylesheets/font_awesome5_webfont.css')).to be_truthy
       expect(File.exists?('./lib/font_awesome5_rails/engine.rb')).to be_truthy
       expect(File.exists?('./lib/font_awesome5_rails/version.rb')).to be_truthy
       expect(File.exists?('./lib/font_awesome5_rails/parsers/fa_icon_parser.rb')).to be_truthy
