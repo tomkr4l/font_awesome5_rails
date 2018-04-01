@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    font_awesome5_rails (0.2.4)
+    font_awesome5_rails (0.3.0)
       railties (>= 4.2, < 5.2)
 
 GEM
