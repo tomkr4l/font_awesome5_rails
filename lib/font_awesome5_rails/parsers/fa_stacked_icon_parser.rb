@@ -34,7 +34,7 @@ class FaStackedIconParser
 
   def parse_icon_classes(klass, first)
     tmp = []
-    tmp << icon_type(@options[:type])
+    tmp << icon_type(first && @options[:base_type].present? ? @options[:base_type] : @options[:type])
     tmp += arr_with_fa(klass)
     tmp << (first ? "fa-stack-2x" : "fa-stack-1x")
     tmp.uniq.join(" ").strip

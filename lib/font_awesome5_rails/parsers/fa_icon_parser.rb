@@ -26,7 +26,7 @@ class FaIconParser
   def get_all_classes
     tmp = []
     tmp << icon_type(@options[:type])
-    tmp << prepend_fa(@icon)
+    tmp += arr_with_fa(@icon)
     tmp += @options[:class].split(" ") unless @options[:class].nil?
     tmp += arr_with_fa(@options[:size]) unless @options[:size].nil?
     tmp += arr_with_fa(@options[:animation]) unless @options[:animation].nil?

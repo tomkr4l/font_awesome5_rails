@@ -107,7 +107,7 @@ fa_icon('camera-retro', data: {'fa-transform': 'rotate-90'})
 In FontAwesome5 the text is right behind icon. For better readability text has defaultly set to ```padding-left: 5px;```. If you want to override this setting, you can do that through ```.fa5-text``` class in css styles.
 
 ### Layered and Stacked icons
-FontAwesome 5 newly provides layred icons. For backward compatibility there were preserved ```fa_stacked_icon``` helper, but you can acomplish the same result with ```fa_layered_icon```.
+FontAwesome 5 newly provides layered icons. For backward compatibility there were preserved ```fa_stacked_icon``` helper, but you can acomplish the same result with ```fa_layered_icon```.
 
 #### Layered icon examples
 ```fa_layered_icon``` takes options and block of code that will be rendered inside.
@@ -141,6 +141,7 @@ Following ```fa_layered_icon``` examples are written in ```haml```.
 ```
 
 #### Stacked icon examples
+For different base icon type you can use ```base_type``` option.
 ```ruby
 fa_stacked_icon('camera', base: 'circle')
 # => <span class="fa-stack">
@@ -159,6 +160,12 @@ fa_stacked_icon('camera', base: 'circle', reverse: true, text: 'Text!') #Default
 # =>   <i class="fas fa-circle fa-stack-1x"></i>
 # =>   <i class="fas fa-camera fa-stack-2x"></i>
 # => </span>Text!
+
+fa_stacked_icon('camera', base: 'circle', type: :fas, base_type: :fab)
+# => <span class="fa-stack">
+# =>   <i class="fab fa-circle fa-stack-2x"></i>
+# =>   <i class="fas fa-camera fa-stack-1x"></i>
+# => </span>
 
 ```
 

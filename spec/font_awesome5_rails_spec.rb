@@ -21,7 +21,7 @@ describe FontAwesome5Rails do
       expect(File.exists?('./app/assets/javascripts/fontawesome-all.min.js')).to be_truthy
       expect(File.exists?('./app/assets/stylesheets/fa-svg-with-js.css')).to be_truthy
       expect(File.exists?('./app/assets/stylesheets/font_awesome5.css')).to be_truthy
-      expect(File.exists?('./app/assets/stylesheets/fontawesome-all.min.css')).to be_truthy
+      expect(File.exists?('./app/assets/stylesheets/fontawesome-all.css.scss')).to be_truthy
       expect(File.exists?('./app/assets/stylesheets/font_awesome5_webfont.css')).to be_truthy
       expect(File.exists?('./lib/font_awesome5_rails/engine.rb')).to be_truthy
       expect(File.exists?('./lib/font_awesome5_rails/version.rb')).to be_truthy
@@ -35,6 +35,7 @@ describe FontAwesome5Rails do
   describe 'fa_icon tags' do
     it 'should return correct type tags' do
       expect(fa_icon 'camera-retro').to eq '<i class="fas fa-camera-retro"></i>'
+      expect(fa_icon 'camera-retro fw').to eq '<i class="fas fa-camera-retro fa-fw"></i>'
       expect(fa_icon 'camera-retro', type: :fas).to eq '<i class="fas fa-camera-retro"></i>'
       expect(fa_icon 'camera-retro', type: :far).to eq '<i class="far fa-camera-retro"></i>'
       expect(fa_icon 'camera-retro', type: :fal).to eq '<i class="fal fa-camera-retro"></i>'
@@ -99,6 +100,12 @@ describe FontAwesome5Rails do
 
       expect(fa_stacked_icon 'camera', base: 'circle', text: 'Text!')
           .to eq '<span class="fa-stack"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-camera fa-stack-1x"></i></span>Text!'
+
+      expect(fa_stacked_icon 'camera', base: 'circle', type: :fas, base_type: :far, reverse: true)
+          .to eq '<span class="fa-stack"><i class="fas fa-camera fa-stack-1x"></i><i class="far fa-circle fa-stack-2x"></i></span>'
+
+      expect(fa_stacked_icon 'camera', base: 'circle', type: :far, base_type: :fas, reverse: true)
+          .to eq '<span class="fa-stack"><i class="far fa-camera fa-stack-1x"></i><i class="fas fa-circle fa-stack-2x"></i></span>'
     end
   end
 
