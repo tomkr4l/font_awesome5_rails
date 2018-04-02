@@ -6,6 +6,8 @@ font_awesome5_rails provides the [Font-Awesome5](https://fontawesome.com/) web f
 
 This gem provides only Free icons from Font-Awesome.
 
+Keep track of changes in [Changelog](https://github.com/tomkra/font_awesome5_rails/blob/master/CHANGELOG.md).
+
 ## Table of Contents
 **[Instalation](#instalation)** <br />
 **[Usage](#usage)** <br />
@@ -15,6 +17,7 @@ This gem provides only Free icons from Font-Awesome.
   - **[Layered and Stacked icons](#layered-and-stacked-icons)** <br />
 
 **[Use as images](#use-as-images)** <br />
+**[FontAwesome 5 Pro icons](#fontawesome-5-pro-icons)** <br />
 
 
 ## Installation
@@ -180,6 +183,16 @@ image_tag('fa5/regular/bell.svg', width: '100px', class: 'my-img')
 More examples can be found in specs.
 
 More animation and data attributes can be found on [FontAwesome documentation](https://fontawesome.com/how-to-use/svg-with-js).
+
+## FontAwesome 5 Pro icons
+Due to licence policy this gem pack only free FA5 icons. However ```fa_icon``` helper support all types of icons. If you buyed FA5 Pro icons and want to use helpers provided by this gem it's possible.   
+1. Add this gem to your ```Gemfile``` without including anything to ```application.css``` and ```application.js```.
+2. Download your FA5 pro icons and unpack them.
+3. Now you will have to manualy include all FA5 files you want to use to your ```/assets``` folder.
+4. If you're using ```svg``` files do not forget to include ```*.svg``` in your ```assets.rb``` file.
+5. You should now be able to use all FA5 Pro icons with helpers provided by this gem.
+
+If you have any questions feel free to create new issue.
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).

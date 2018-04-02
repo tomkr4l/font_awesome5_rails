@@ -1,7 +1,7 @@
 ## v 0.3.0
-- update FontAwesome version to version 5.0.9
+- update FontAwesome version to 5.0.9
 - fixed bug causing that font_awesome5_webfont was not showing in production environment
-- automaticly add fa when more params providede [[#5](https://github.com/tomkra/font_awesome5_rails/issues/5)]
+- automaticly add fa when more params provided [[#5](https://github.com/tomkra/font_awesome5_rails/issues/5)]
 - add ```base_type``` option for ```fa_stacked_icon```, so it's now possible to specify icon type for base icon [[#7](https://github.com/tomkra/font_awesome5_rails/issues/7)]
 
 ## v 0.2.4
