@@ -1,4 +1,4 @@
-# FontAwesome5Rails
+# Font Awesome 5 Rails
 [![Build Status](https://travis-ci.org/tomkra/font_awesome5_rails.svg?branch=master)](https://travis-ci.org/tomkra/font_awesome5_rails)
 [![HitCount](http://hits.dwyl.io/tomkra/tomkra/font_awesome5_rails.svg)](http://hits.dwyl.io/tomkra/tomkra/font_awesome5_rails)
 
