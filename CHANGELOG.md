@@ -1,3 +1,7 @@
+## v 0.3.2
+- update FontAwesome version to 5.0.10
+- update parser to support symbol notation icon [[#12](https://github.com/tomkra/font_awesome5_rails/issues/12)]
+
 ## v 0.3.1
 - add Rails 5.2.0 support [[#10](https://github.com/tomkra/font_awesome5_rails/issues/10)]
 - fix bug that caused icons not showing with turbolinks [[#9](https://github.com/tomkra/font_awesome5_rails/issues/9)]

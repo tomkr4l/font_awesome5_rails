@@ -19,6 +19,20 @@ module ParseMethods
   end
 
   def arr_with_fa(array)
+    array = handle_input(array)
     array.split(" ").map{ |s| prepend_fa(s) }
+  end
+
+  private
+
+  def handle_input(input)
+    case input
+    when Symbol
+      input.to_s.gsub('_', '-')
+    when Array
+      input.collect{ |i| i.to_s.gsub('_', '-') }.join(' ')
+    else
+      input.to_s
+    end
   end
 end

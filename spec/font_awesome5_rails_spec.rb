@@ -79,6 +79,12 @@ describe FontAwesome5Rails do
       expect(fa_icon 'camera-retro', text: 'Camera', style: 'color: Tomato;').to have_tag('span', text: 'Camera', with: {style: 'color: Tomato;'})
       expect(fa_icon 'camera-retro', text: 'Camera', size: '3x').to have_tag('span', text: 'Camera', with: {class: 'fa5-text fa-3x'})
     end
+
+    it 'should return correct tags with symbols' do
+      expect(fa_icon :facebook, type: :brand).to eq '<i class="fab fa-facebook"></i>'
+      expect(fa_icon :camera_retro).to eq '<i class="fas fa-camera-retro"></i>'
+      expect(fa_icon [:camera_retro, :circle]).to eq '<i class="fas fa-camera-retro fa-circle"></i>'
+    end
   end
 
   describe 'fa_stacked_icon tags' do
@@ -106,6 +112,13 @@ describe FontAwesome5Rails do
 
       expect(fa_stacked_icon 'camera', base: 'circle', type: :far, base_type: :fas, reverse: true)
           .to eq '<span class="fa-stack"><i class="far fa-camera fa-stack-1x"></i><i class="fas fa-circle fa-stack-2x"></i></span>'
+    end
+
+    it 'should return correct tags with symbols' do
+      expect(fa_stacked_icon [:camera, :inverse], base: :circle)
+          .to eq '<span class="fa-stack"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-camera fa-inverse fa-stack-1x"></i></span>'
+      expect(fa_stacked_icon :camera, base: :circle, type: :far, reverse: false)
+          .to eq '<span class="fa-stack"><i class="far fa-circle fa-stack-2x"></i><i class="far fa-camera fa-stack-1x"></i></span>'
     end
   end
 
