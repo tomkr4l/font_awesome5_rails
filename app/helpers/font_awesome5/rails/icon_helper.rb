@@ -9,10 +9,10 @@ module FontAwesome5
       def fa_icon(icon, options = {})
         parser = FaIconParser.new(icon, options)
         if parser.text.nil?
-          content_tag(:i, nil, class: parser.classes, style: parser.style, data: parser.data)
+          content_tag(:i, nil, class: parser.classes, style: parser.style, title: parser.title, data: parser.data)
         else
-          content_tag(:i, nil, class: parser.classes, style: parser.style, data: parser.data) +
-          content_tag(:span, parser.text, class: "fa5-text #{parser.sizes}", style: parser.style)
+          content_tag(:i, nil, class: parser.classes, style: parser.style, title: parser.title, data: parser.data) +
+          content_tag(:span, parser.text, class: "fa5-text#{' ' unless parser.sizes.blank?}#{parser.sizes}", style: parser.style)
         end
       end
 
@@ -20,7 +20,7 @@ module FontAwesome5
       def fa_stacked_icon(icon, options = {})
         parser = FaStackedIconParser.new(icon, options)
 
-        tags = content_tag :span, class: parser.span_classes do
+        tags = content_tag :span, class: parser.span_classes, title: parser.title do
           content_tag(:i, nil, class: (parser.reverse ? parser.second_icon_classes : parser.first_icon_classes) ) +
           content_tag(:i, nil, class: (parser.reverse ? parser.first_icon_classes : parser.second_icon_classes) )
         end
@@ -31,10 +31,10 @@ module FontAwesome5
       def fa_layered_icon(options = {}, &block)
         parser = FaLayeredIconParser.new(options)
         if parser.size.nil?
-          content_tag(:span, class: parser.classes, style: parser.style, &block)
+          content_tag(:span, class: parser.classes, title: parser.title, style: parser.style, &block)
         else
           content_tag :div, class: "fa-#{parser.size}" do
-            content_tag(:span, class: parser.classes, style: parser.style, &block)
+            content_tag(:span, class: parser.classes, title: parser.title, style: parser.style, &block)
           end
         end
       end

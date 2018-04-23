@@ -1,7 +1,7 @@
 require_relative "parse_methods"
 
 class FaStackedIconParser
-  attr_reader :reverse, :options, :span_classes, :first_icon_classes, :second_icon_classes, :text
+  attr_reader :reverse, :options, :span_classes, :first_icon_classes, :second_icon_classes, :text, :title
 
   include ParseMethods
 
@@ -9,6 +9,7 @@ class FaStackedIconParser
     @icon = icon
     @text = options[:text]
     @reverse = options[:reverse].nil? ? false : options[:reverse]
+    @title = options[:title]
     @options = options
   end
 

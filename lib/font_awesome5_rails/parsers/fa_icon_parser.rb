@@ -3,7 +3,7 @@ require_relative 'parse_methods'
 class FaIconParser
   include ParseMethods
 
-  attr_reader :icon, :options, :data, :style, :text
+  attr_reader :icon, :options, :data, :style, :text, :title
 
   def initialize(icon, options)
     @icon = icon
@@ -11,6 +11,7 @@ class FaIconParser
     @data = options[:data]
     @style = options[:style]
     @text = options[:text]
+    @title = options[:title]
   end
 
   def classes

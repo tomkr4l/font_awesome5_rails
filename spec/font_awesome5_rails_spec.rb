@@ -85,6 +85,12 @@ describe FontAwesome5Rails do
       expect(fa_icon :camera_retro).to eq '<i class="fas fa-camera-retro"></i>'
       expect(fa_icon [:camera_retro, :circle]).to eq '<i class="fas fa-camera-retro fa-circle"></i>'
     end
+
+    it 'should return correct title tags' do
+      expect(fa_icon 'camera-retro', title: 'camera-title').to eq '<i class="fas fa-camera-retro" title="camera-title"></i>'
+      expect(fa_icon 'camera-retro', text: 'Camera', title: 'camera-title').to eq '<i class="fas fa-camera-retro" title="camera-title"></i><span class="fa5-text">Camera</span>'
+
+    end
   end
 
   describe 'fa_stacked_icon tags' do
@@ -120,6 +126,11 @@ describe FontAwesome5Rails do
       expect(fa_stacked_icon :camera, base: :circle, type: :far, reverse: false)
           .to eq '<span class="fa-stack"><i class="far fa-circle fa-stack-2x"></i><i class="far fa-camera fa-stack-1x"></i></span>'
     end
+
+    it 'should return correct tags with title' do
+      expect(fa_stacked_icon [:camera, :inverse], base: :circle, title: 'Camera')
+          .to eq '<span class="fa-stack" title="Camera"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-camera fa-inverse fa-stack-1x"></i></span>'
+    end
   end
 
   describe 'fa_layered_icon tags' do
@@ -141,6 +152,11 @@ describe FontAwesome5Rails do
           (fa_icon 'circle') + (fa_icon 'times')
         end
       ).to eq '<span class="fa-layers fa-fw"><i class="fas fa-circle"></i><i class="fas fa-times"></i></span>'
+    end
+
+    it 'should return correct tags with title' do
+      expect(fa_layered_icon(style: 'background: MistyRose', title: 'LayeredIcon'){ fa_icon 'circle' })
+          .to eq '<span class="fa-layers fa-fw" title="LayeredIcon" style="background: MistyRose"><i class="fas fa-circle"></i></span>'
     end
   end
   
