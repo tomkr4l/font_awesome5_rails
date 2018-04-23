@@ -64,6 +64,9 @@ fa_icon('camera-retro', style: 'color: Tomato')
 fa_icon('camera-retro', class: 'my-class', text: 'Camera', size: '3x')
 # => <i class="fas fa-camera-retro my-class fa-3x"></i>
 # =>  <span>Camera</span>
+ 
+fa_icon(:camera_retro, class: 'my-class')
+# => <i class="fas fa-camera-retro my-class"></i>
 ```
 
 ### Solid, Regular, Light, Brand icon types
