@@ -30,6 +30,10 @@ describe FontAwesome5Rails do
       expect(File.exists?('./lib/font_awesome5_rails/parsers/fa_stacked_icon_parser.rb')).to be_truthy
       expect(File.exists?('./lib/font_awesome5_rails/parsers/parse_methods.rb')).to be_truthy
     end
+
+    it 'should not include requestAnimationFrame' do
+      expect(File.foreach('./app/assets/javascripts/fontawesome-all.min.js').grep(/requestAnimationFrame/).any?).to be_falsey
+    end
   end
 
   describe 'fa_icon tags' do
@@ -89,7 +93,12 @@ describe FontAwesome5Rails do
     it 'should return correct title tags' do
       expect(fa_icon 'camera-retro', title: 'camera-title').to eq '<i class="fas fa-camera-retro" title="camera-title"></i>'
       expect(fa_icon 'camera-retro', text: 'Camera', title: 'camera-title').to eq '<i class="fas fa-camera-retro" title="camera-title"></i><span class="fa5-text">Camera</span>'
+    end
 
+    it 'should return correct all tags' do
+      expect(fa_icon 'camera-retro', test: 'test').to eq '<i class="fas fa-camera-retro" test="test"></i>'
+      expect(fa_icon 'camera-retro', 'aria-hidden': true).to eq '<i class="fas fa-camera-retro" aria-hidden="true"></i>'
+      expect(fa_icon 'camera-retro', aria: {hidden: true}).to eq '<i class="fas fa-camera-retro" aria-hidden="true"></i>'
     end
   end
 

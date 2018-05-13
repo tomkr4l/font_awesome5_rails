@@ -1,3 +1,8 @@
+## v 0.3.3
+- update FontAwesome version to 5.0.13
+- update parser so tags like ```aria-hidden``` etc. can be used [[#16](https://github.com/tomkra/font_awesome5_rails/issues/16)]
+- fix flicker problem after rendering with Turbolinks [[#17](https://github.com/tomkra/font_awesome5_rails/issues/17)]
+ 
 ## v 0.3.2
 - update FontAwesome version to 5.0.10
 - update parser to support symbol notation icon [[#12](https://github.com/tomkra/font_awesome5_rails/issues/12)]
