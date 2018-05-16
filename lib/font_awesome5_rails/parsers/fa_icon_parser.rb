@@ -12,7 +12,7 @@ class FaIconParser
     @style = options[:style]
     @text = options[:text]
     @title = options[:title]
-    @attrs = options.without(:text, :type, :class, :icon, :animation, :size)
+    @attrs = options.except(:text, :type, :class, :icon, :animation, :size)
   end
 
   def classes
