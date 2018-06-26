@@ -1,4 +1,4 @@
-//= require fontawesome-all.min
+//= require all
 
 document.addEventListener("turbolinks:before-render", function(event) {
     FontAwesome.dom.i2svg({
