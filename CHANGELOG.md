@@ -1,3 +1,7 @@
+## v 0.3.4
+- update FontAwesome version to 5.1.0
+- include fix for getting working with rails 4.2.x thanks to @JNajera [[pull#20](https://github.com/tomkra/font_awesome5_rails/pull/20)]
+
 ## v 0.3.3
 - update FontAwesome version to 5.0.13
 - update parser so tags like ```aria-hidden``` etc. can be used [[#16](https://github.com/tomkra/font_awesome5_rails/issues/16)]
