@@ -1,3 +1,6 @@
+## v 0.3.5
+- update FontAwesome to version 5.1.1
+
 ## v 0.3.4
 - update FontAwesome version to 5.1.0
 - include fix for getting working with rails 4.2.x thanks to @JNajera [[pull#20](https://github.com/tomkra/font_awesome5_rails/pull/20)]
