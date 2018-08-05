@@ -1,3 +1,6 @@
+## v 0.3.6
+- update FontAwesome to version 5.2.0
+
 ## v 0.3.5
 - update FontAwesome to version 5.1.1
 
