@@ -1,3 +1,7 @@
+## v 0.4.0
+- update FontAwesome to version 5.3.1
+- update project files to correspond with FA filenames
+
 ## v 0.3.6
 - update FontAwesome to version 5.2.0
 

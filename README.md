@@ -25,7 +25,9 @@ Keep track of changes in [Changelog](https://github.com/tomkra/font_awesome5_rai
 ## Installation
 Now you have two options how to include FontAwesome 5 icons. First option is to use ```SVG``` and ```JS``` files which is recommended by FontAwesome team. However you can use icons as ```webfont with CSS``` but you will not be able to use new FA5 features as animations or ```layered_icons```. Choose one installation option from above:
 
-### 1. Install as SVG with JS (recommended)
+Check ou the differences in [here](https://fontawesome.com/how-to-use/on-the-web/setup/getting-started?using=svg-with-js&explain=using).
+
+### 1. Install as SVG with JS
 Add this line to your application's Gemfile:
 
 ```ruby
@@ -46,10 +48,14 @@ In your `application.js`, include the javascript file:
 #= require font_awesome5
 ```
 
-### 2. Install as webfont with CSS (old way)
+### 2. Install as webfont with CSS
 In your `application.css`, include the css file:
 ```css
- *= require font_awesome5_webfont
+ *= require font_awesome5_webfont.css
+```
+or if you prefer scss add this to your `application.css.scss` file:
+```sass
+@import 'font_awesome5_webfont.css';
 ```
 
 ## Usage

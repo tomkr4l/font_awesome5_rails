@@ -18,11 +18,11 @@ describe FontAwesome5Rails do
     it 'should have correct files' do
       expect(File.exists?('./app/helpers/font_awesome5/rails/icon_helper.rb')).to be_truthy
       expect(File.exists?('./app/assets/javascripts/font_awesome5.js')).to be_truthy
-      expect(File.exists?('./app/assets/javascripts/fontawesome-all.min.js')).to be_truthy
-      expect(File.exists?('./app/assets/stylesheets/fa-svg-with-js.css')).to be_truthy
+      expect(File.exists?('./app/assets/javascripts/all.min.js')).to be_truthy
+      expect(File.exists?('./app/assets/stylesheets/svg-with-js.min.css')).to be_truthy
       expect(File.exists?('./app/assets/stylesheets/font_awesome5.css')).to be_truthy
-      expect(File.exists?('./app/assets/stylesheets/fontawesome-all.css.scss')).to be_truthy
-      expect(File.exists?('./app/assets/stylesheets/font_awesome5_webfont.css')).to be_truthy
+      expect(File.exists?('./app/assets/stylesheets/all.scss')).to be_truthy
+      expect(File.exists?('./app/assets/stylesheets/font_awesome5_webfont.scss')).to be_truthy
       expect(File.exists?('./lib/font_awesome5_rails/engine.rb')).to be_truthy
       expect(File.exists?('./lib/font_awesome5_rails/version.rb')).to be_truthy
       expect(File.exists?('./lib/font_awesome5_rails/parsers/fa_icon_parser.rb')).to be_truthy
@@ -32,7 +32,7 @@ describe FontAwesome5Rails do
     end
 
     it 'should not include requestAnimationFrame' do
-      expect(File.foreach('./app/assets/javascripts/fontawesome-all.min.js').grep(/requestAnimationFrame/).any?).to be_falsey
+      expect(File.foreach('./app/assets/javascripts/all.min.js').grep(/requestAnimationFrame/).any?).to be_falsey
     end
   end
 
