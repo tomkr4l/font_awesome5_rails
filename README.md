@@ -1,6 +1,6 @@
 # Font Awesome 5 Rails
 [![Gem Version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=rb&type=6&v=0.3.6&x2=0)](https://badge.fury.io/rb/font_awesome5_rails)
-[![FA5 version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=5.2.0&x2=0)](https://github.com/tomkra/font_awesome5_rails/blob/master/lib/font_awesome5_rails/version.rb)
+[![FA5 version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=5.3.1&x2=0)](https://github.com/tomkra/font_awesome5_rails/blob/master/lib/font_awesome5_rails/version.rb)
 [![Build Status](https://travis-ci.org/tomkra/font_awesome5_rails.svg?branch=master)](https://travis-ci.org/tomkra/font_awesome5_rails)
 [![HitCount](http://hits.dwyl.io/tomkra/tomkra/font_awesome5_rails.svg)](http://hits.dwyl.io/tomkra/tomkra/font_awesome5_rails)
 
@@ -20,7 +20,7 @@ Keep track of changes in [Changelog](https://github.com/tomkra/font_awesome5_rai
 
 **[Use as images](#use-as-images)** <br />
 **[FontAwesome 5 Pro icons](#fontawesome-5-pro-icons)** <br />
-
+**[Release notes](#release-notes)** <br />
 
 ## Installation
 Now you have two options how to include FontAwesome 5 icons. First option is to use ```SVG``` and ```JS``` files which is recommended by FontAwesome team. However you can use icons as ```webfont with CSS``` but you will not be able to use new FA5 features as animations or ```layered_icons```. Choose one installation option from above:
@@ -204,6 +204,9 @@ Due to licence policy this gem pack only free FA5 icons. However ```fa_icon``` h
 5. You should now be able to use all FA5 Pro icons with helpers provided by this gem.
 
 If you have any questions feel free to create new issue.
+
+## Release notes
+If you're upgrading from ```0.3.x``` version to ```0.4.x```, you might need to change assets version in ```assets.rb```, due to filename changes.
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
