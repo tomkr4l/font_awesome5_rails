@@ -51,11 +51,11 @@ In your `application.js`, include the javascript file:
 ### 2. Install as webfont with CSS
 In your `application.css`, include the css file:
 ```css
- *= require font_awesome5_webfont.css
+ *= require font_awesome5_webfont
 ```
 or if you prefer scss add this to your `application.css.scss` file:
 ```sass
-@import 'font_awesome5_webfont.css';
+@import 'font_awesome5_webfont';
 ```
 
 ## Usage
