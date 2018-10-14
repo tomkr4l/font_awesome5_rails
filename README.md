@@ -2,7 +2,7 @@
 [![Gem Version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=rb&type=6&v=0.4.1&x2=0)](https://badge.fury.io/rb/font_awesome5_rails)
 [![FA5 version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=5.4.1&x2=0)](https://github.com/tomkra/font_awesome5_rails/blob/master/lib/font_awesome5_rails/version.rb)
 [![Build Status](https://travis-ci.org/tomkra/font_awesome5_rails.svg?branch=master)](https://travis-ci.org/tomkra/font_awesome5_rails)
-[![HitCount](http://hits.dwyl.io/tomkra/tomkra/font_awesome5_rails.svg)](http://hits.dwyl.io/tomkra/tomkra/font_awesome5_rails)
+[![HitCount](http://hits.dwyl.io/tomkra/tomkra/font_awesome5_rails.svg)](http://hrits.dwyl.io/tomkra/tomkra/font_awesome5_rails)
 
 font_awesome5_rails provides the [Font-Awesome5](https://fontawesome.com/) web fonts, stylesheets and javascripts as a Rails engine for use with the asset pipeline and with backwards compatibility with [font-awesome-rails](https://github.com/bokmann/font-awesome-rails) gem.
 
@@ -36,11 +36,11 @@ gem 'font_awesome5_rails'
 ### 1. Install as webfont with CSS
 In your `application.css`, include the css file:
 ```css
- *= require font_awesome5_webfont.css
+ *= require font_awesome5_webfont
 ```
 or if you prefer scss add this to your `application.css.scss` file:
 ```sass
-@import 'font_awesome5_webfont.css';
+@import 'font_awesome5_webfont';
 ```
 
 ### 2. Install as SVG with JS
@@ -50,14 +50,13 @@ In your `application.css`, include the css file:
 ```
 or if you prefer scss add this to your `application.scss` file:
 ```sass
-@import 'font_awesome5';
+@import 'font_awesome5.css';
 ```
 
 In your `application.js`, include the javascript file:
 ```javascript
 #= require font_awesome5
 ```
-
 
 ## Usage
 Gem provides FontAwesome icons through helper. In your views just call `fa_icon`.
