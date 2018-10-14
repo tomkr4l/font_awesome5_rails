@@ -1,6 +1,6 @@
 # Font Awesome 5 Rails
-[![Gem Version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=rb&type=6&v=0.4.0&x2=0)](https://badge.fury.io/rb/font_awesome5_rails)
-[![FA5 version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=5.3.1&x2=0)](https://github.com/tomkra/font_awesome5_rails/blob/master/lib/font_awesome5_rails/version.rb)
+[![Gem Version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=rb&type=6&v=0.4.1&x2=0)](https://badge.fury.io/rb/font_awesome5_rails)
+[![FA5 version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=5.4.1&x2=0)](https://github.com/tomkra/font_awesome5_rails/blob/master/lib/font_awesome5_rails/version.rb)
 [![Build Status](https://travis-ci.org/tomkra/font_awesome5_rails.svg?branch=master)](https://travis-ci.org/tomkra/font_awesome5_rails)
 [![HitCount](http://hits.dwyl.io/tomkra/tomkra/font_awesome5_rails.svg)](http://hits.dwyl.io/tomkra/tomkra/font_awesome5_rails)
 
@@ -11,7 +11,7 @@ This gem provides only Free icons from Font-Awesome.
 Keep track of changes in [Changelog](https://github.com/tomkra/font_awesome5_rails/blob/master/CHANGELOG.md).
 
 ## Table of Contents
-**[Instalation](#instalation)** <br />
+**[Installation](#installation)** <br />
 **[Usage](#usage)** <br />
   - **[Basic usage](#basic-usage)** <br />
   - **[Solid, Regular, Light, Brand icon types](#solid-regular-light-brand-icon-types)** <br />
@@ -27,18 +27,28 @@ Now you have two options how to include FontAwesome 5 icons. First option is to 
 
 Check ou the differences in [here](https://fontawesome.com/how-to-use/on-the-web/setup/getting-started?using=svg-with-js&explain=using).
 
-### 1. Install as SVG with JS
 Add this line to your application's Gemfile:
 
 ```ruby
 gem 'font_awesome5_rails'
 ```
 
+### 1. Install as webfont with CSS
+In your `application.css`, include the css file:
+```css
+ *= require font_awesome5_webfont.css
+```
+or if you prefer scss add this to your `application.css.scss` file:
+```sass
+@import 'font_awesome5_webfont.css';
+```
+
+### 2. Install as SVG with JS
 In your `application.css`, include the css file:
 ```css
  *= require font_awesome5
 ```
-or if you prefer scss add this to your `application.css.scss` file:
+or if you prefer scss add this to your `application.scss` file:
 ```sass
 @import 'font_awesome5';
 ```
@@ -48,15 +58,6 @@ In your `application.js`, include the javascript file:
 #= require font_awesome5
 ```
 
-### 2. Install as webfont with CSS
-In your `application.css`, include the css file:
-```css
- *= require font_awesome5_webfont.css
-```
-or if you prefer scss add this to your `application.css.scss` file:
-```sass
-@import 'font_awesome5_webfont.css';
-```
 
 ## Usage
 Gem provides FontAwesome icons through helper. In your views just call `fa_icon`.
