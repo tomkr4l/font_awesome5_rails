@@ -1,3 +1,6 @@
+## v 0.4.2
+- update FontAwesome to version 5.5.0 (new icons)
+
 ## v 0.4.1
 - update FontAwesome to version 5.4.1 (new icons)
 
