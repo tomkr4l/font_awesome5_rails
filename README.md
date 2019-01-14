@@ -107,6 +107,29 @@ fa_icon('camera-retro', type: :fab)
      
 ```  
 
+Each icon type has its own helper method so you don't need to provide the ```type``` attribute in every call.
+Which can be overridden, if it is provided.
+```ruby
+far_icon('camera-retro')
+# => <i class="far fa-camera-retro"></i>
+
+far_icon('camera-retro', type: :fab)
+# => <i class="fab fa-camera-retro"></i>
+
+far_stacked_icon('camera', base: 'circle')
+# => <span class="fa-stack">
+# =>   <i class="far fa-circle fa-stack-2x"></i>
+# =>   <i class="far fa-camera fa-stack-1x"></i>
+# => </span>
+
+far_stacked_icon('camera', base: 'circle', type: :fal)
+# => <span class="fa-stack">
+# =>   <i class="fal fa-circle fa-stack-2x"></i>
+# =>   <i class="fal fa-camera fa-stack-1x"></i>
+# => </span>
+
+```
+
 ### Animations and data attributes
 FontAwesome 5 provides new animations and data attributes. Here are some examples how to use them:
 ```ruby
