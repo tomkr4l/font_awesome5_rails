@@ -1,3 +1,6 @@
+## v 0.5.0 and later
+see [#Releases](https://github.com/tomkra/font_awesome5_rails/releases) for later releases
+
 ## v 0.4.3
 - update FontAwesome to version 5.6.0 (new icons)
 
