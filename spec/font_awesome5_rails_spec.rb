@@ -169,4 +169,36 @@ describe FontAwesome5Rails do
     end
   end
   
+  describe '[fas, far, fal, fab]_icon helper method' do
+    %w(fas far fal fab).each do |type|
+      it "#{type}_icon should be defined and use the right icon type" do
+        method = :"#{type}_icon"
+
+        expect(self).to respond_to(method)
+        expect(send(method, 'camera-retro')).to eq "<i class=\"#{type} fa-camera-retro\"></i>"
+        expect(send(method, 'camera-retro', type: :fal)).to eq "<i class=\"fal fa-camera-retro\"></i>"
+        expect(send(method, 'camera-retro', type: :brand, class: 'test')).to eq "<i class=\"fab fa-camera-retro test\"></i>"
+      end
+    end
+  end
+
+  describe '[fas, far, fal, fab]_stacked_icon helper method' do
+    %w(fas far fal fab).each do |type|
+      it "#{type}_stacked_icon should be defined and use the right icon type" do
+        method = :"#{type}_stacked_icon"
+
+        expect(self).to respond_to(method)
+
+        expect(send(method, 'camera', base: 'circle'))
+          .to eq "<span class=\"fa-stack\"><i class=\"#{type} fa-circle fa-stack-2x\"></i><i class=\"#{type} fa-camera fa-stack-1x\"></i></span>"
+
+        expect(send(method, 'camera', base: 'circle', type: :fal))
+          .to eq '<span class="fa-stack"><i class="fal fa-circle fa-stack-2x"></i><i class="fal fa-camera fa-stack-1x"></i></span>'
+
+        expect(send(method, 'camera', base: 'circle', type: :brand, reverse: false))
+          .to eq '<span class="fa-stack"><i class="fab fa-circle fa-stack-2x"></i><i class="fab fa-camera fa-stack-1x"></i></span>'
+      end
+    end
+  end
+
 end
