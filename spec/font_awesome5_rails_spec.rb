@@ -30,10 +30,6 @@ describe FontAwesome5Rails do
       expect(File.exists?('./lib/font_awesome5_rails/parsers/fa_stacked_icon_parser.rb')).to be_truthy
       expect(File.exists?('./lib/font_awesome5_rails/parsers/parse_methods.rb')).to be_truthy
     end
-
-    it 'should not include requestAnimationFrame' do
-      expect(File.foreach('./app/assets/javascripts/all.min.js').grep(/requestAnimationFrame/).any?).to be_falsey
-    end
   end
 
   describe 'fa_icon tags' do
