@@ -96,6 +96,10 @@ describe FontAwesome5Rails do
       expect(fa_icon 'camera-retro', 'aria-hidden': true).to eq '<i class="fas fa-camera-retro" aria-hidden="true"></i>'
       expect(fa_icon 'camera-retro', aria: {hidden: true}).to eq '<i class="fas fa-camera-retro" aria-hidden="true"></i>'
     end
+
+    it 'should return tags with text on right side' do
+      expect(fa_icon 'camera-retro', text: 'Camera', right: true).to eq '<span class="fa5-text-r">Camera</span><i class="fas fa-camera-retro"></i>'
+    end
   end
 
   describe 'fa_stacked_icon tags' do

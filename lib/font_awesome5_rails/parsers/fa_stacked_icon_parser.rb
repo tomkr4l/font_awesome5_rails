@@ -1,9 +1,9 @@
 require_relative "parse_methods"
 
 class FaStackedIconParser
-  attr_reader :reverse, :options, :span_classes, :first_icon_classes, :second_icon_classes, :text, :title
-
   include ParseMethods
+
+  attr_reader :reverse, :options, :span_classes, :first_icon_classes, :second_icon_classes, :text, :title
 
   def initialize(icon, options)
     @icon = icon

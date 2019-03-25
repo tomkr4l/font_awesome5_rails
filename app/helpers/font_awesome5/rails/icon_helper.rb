@@ -8,14 +8,8 @@ module FontAwesome5
 
       def fa_icon(icon, options = {})
         parser = FaIconParser.new(icon, options)
-        if parser.text.nil?
-          content_tag(:i, nil, class: parser.classes, **parser.attrs)
-        else
-          content_tag(:i, nil, class: parser.classes, **parser.attrs) +
-          content_tag(:span, parser.text, class: "fa5-text#{' ' unless parser.sizes.blank?}#{parser.sizes}", style: parser.style)
-        end
+        parser.get_content_tag
       end
-
 
       def fa_stacked_icon(icon, options = {})
         parser = FaStackedIconParser.new(icon, options)
