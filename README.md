@@ -223,14 +223,13 @@ More examples can be found in specs.
 More animation and data attributes can be found on [FontAwesome documentation](https://fontawesome.com/how-to-use/svg-with-js).
 
 ## FontAwesome 5 Pro icons
-Due to licence policy this gem pack only free FA5 icons. However ```fa_icon``` helper support all types of icons. If you buyed FA5 Pro icons and want to use helpers provided by this gem it's possible.   
+Due to licence policy this gem pack only free FA5 icons. However ```fa_icon``` helper support all types of icons. If you purchased FA5 Pro icons and want to use helpers provided by this gem it's possible.   
 1. Add this gem to your ```Gemfile``` without including anything to ```application.css``` and ```application.js```.
-2. Download your FA5 pro icons and unpack them.
-3. Now you will have to manualy include all FA5 files you want to use to your ```/assets``` folder.
-4. If you're using ```svg``` files do not forget to include ```*.svg``` in your ```assets.rb``` file.
-5. You should now be able to use all FA5 Pro icons with helpers provided by this gem.
+2. Create a [Kit](https://fontawesome.com/kits) on Font Awesome.
+3. Add `= javascript_include_tag "//kit.fontawesome.com/[YOUR-KIT-ID].js"` in the head of your layout(s).
+4. You should now be able to use all FA5 Pro icons with helpers provided by this gem.
 
-If you have any questions feel free to create new issue.
+If you have any questions feel free to create a new issue.
 
 ## Release notes
 If you're upgrading from ```0.3.x``` version to ```0.4.x```, you might need to change assets version in ```assets.rb```, due to filename changes.
