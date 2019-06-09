@@ -32,113 +32,117 @@ describe FontAwesome5Rails do
     end
   end
 
-  describe 'fa_icon tags' do
-    it 'should return correct type tags' do
-      expect(fa_icon 'camera-retro').to eq '<i class="fas fa-camera-retro"></i>'
-      expect(fa_icon 'camera-retro fw').to eq '<i class="fas fa-camera-retro fa-fw"></i>'
-      expect(fa_icon 'camera-retro', type: :fas).to eq '<i class="fas fa-camera-retro"></i>'
-      expect(fa_icon 'camera-retro', type: :far).to eq '<i class="far fa-camera-retro"></i>'
-      expect(fa_icon 'camera-retro', type: :fal).to eq '<i class="fal fa-camera-retro"></i>'
-      expect(fa_icon 'camera-retro', type: :fab).to eq '<i class="fab fa-camera-retro"></i>'
-      expect(fa_icon 'camera-retro', type: :solid).to eq '<i class="fas fa-camera-retro"></i>'
-      expect(fa_icon 'camera-retro', type: :regular).to eq '<i class="far fa-camera-retro"></i>'
-      expect(fa_icon 'camera-retro', type: :light).to eq '<i class="fal fa-camera-retro"></i>'
-      expect(fa_icon 'camera-retro', type: :brand).to eq '<i class="fab fa-camera-retro"></i>'
-    end
+  %w(fa_icon fa5_icon).each do |method|
+    describe "#{method} tags" do
+      it 'should return correct type tags' do
+        expect(send method, 'camera-retro').to eq '<i class="fas fa-camera-retro"></i>'
+        expect(send method, 'camera-retro fw').to eq '<i class="fas fa-camera-retro fa-fw"></i>'
+        expect(send method, 'camera-retro', type: :fas).to eq '<i class="fas fa-camera-retro"></i>'
+        expect(send method, 'camera-retro', type: :far).to eq '<i class="far fa-camera-retro"></i>'
+        expect(send method, 'camera-retro', type: :fal).to eq '<i class="fal fa-camera-retro"></i>'
+        expect(send method, 'camera-retro', type: :fab).to eq '<i class="fab fa-camera-retro"></i>'
+        expect(send method, 'camera-retro', type: :solid).to eq '<i class="fas fa-camera-retro"></i>'
+        expect(send method, 'camera-retro', type: :regular).to eq '<i class="far fa-camera-retro"></i>'
+        expect(send method, 'camera-retro', type: :light).to eq '<i class="fal fa-camera-retro"></i>'
+        expect(send method, 'camera-retro', type: :brand).to eq '<i class="fab fa-camera-retro"></i>'
+      end
 
-    it 'should return correct class tags' do
-      expect(fa_icon 'camera-retro').to eq '<i class="fas fa-camera-retro"></i>'
-      expect(fa_icon('camera-retro', class: 'test')).to eq '<i class="fas fa-camera-retro test"></i>'
-      expect(fa_icon('camera-retro', class: 'fa-camera-retro')).to eq '<i class="fas fa-camera-retro"></i>'
-    end
+      it 'should return correct class tags' do
+        expect(send method, 'camera-retro').to eq '<i class="fas fa-camera-retro"></i>'
+        expect(send method, 'camera-retro', class: 'test').to eq '<i class="fas fa-camera-retro test"></i>'
+        expect(send method, 'camera-retro', class: 'fa-camera-retro').to eq '<i class="fas fa-camera-retro"></i>'
+      end
 
-    it 'should return correct size tags' do
-      expect(fa_icon 'camera-retro', size: '3x').to eq '<i class="fas fa-camera-retro fa-3x"></i>'
-      expect(fa_icon 'camera-retro', class: 'fa-3x', size: '3x').to eq '<i class="fas fa-camera-retro fa-3x"></i>'
-      expect(fa_icon 'camera-retro', size: '3x 2x').to eq '<i class="fas fa-camera-retro fa-3x fa-2x"></i>'
-    end
+      it 'should return correct size tags' do
+        expect(send method, 'camera-retro', size: '3x').to eq '<i class="fas fa-camera-retro fa-3x"></i>'
+        expect(send method, 'camera-retro', class: 'fa-3x', size: '3x').to eq '<i class="fas fa-camera-retro fa-3x"></i>'
+        expect(send method, 'camera-retro', size: '3x 2x').to eq '<i class="fas fa-camera-retro fa-3x fa-2x"></i>'
+      end
 
-    it 'should return correct animation tags' do
-      expect(fa_icon 'camera-retro', animation: 'spin').to eq '<i class="fas fa-camera-retro fa-spin"></i>'
-      expect(fa_icon 'camera-retro', class: 'fa-spin', animation: 'spin').to eq '<i class="fas fa-camera-retro fa-spin"></i>'
-      expect(fa_icon 'camera-retro', animation: 'spin cog').to eq '<i class="fas fa-camera-retro fa-spin fa-cog"></i>'
-    end
+      it 'should return correct animation tags' do
+        expect(send method, 'camera-retro', animation: 'spin').to eq '<i class="fas fa-camera-retro fa-spin"></i>'
+        expect(send method, 'camera-retro', class: 'fa-spin', animation: 'spin').to eq '<i class="fas fa-camera-retro fa-spin"></i>'
+        expect(send method, 'camera-retro', animation: 'spin cog').to eq '<i class="fas fa-camera-retro fa-spin fa-cog"></i>'
+      end
 
-    it 'should return correct style tags' do
-      expect(fa_icon 'camera-retro', style: 'color: Tomato;').to eq '<i class="fas fa-camera-retro" style="color: Tomato;"></i>'
-    end
+      it 'should return correct style tags' do
+        expect(send method, 'camera-retro', style: 'color: Tomato;').to eq '<i class="fas fa-camera-retro" style="color: Tomato;"></i>'
+      end
 
-    it 'should return correct data tags' do
-      expect(fa_icon 'camera-retro', data: {'fa-transform': 'rotate-90'}).to eq '<i class="fas fa-camera-retro" data-fa-transform="rotate-90"></i>'
-      expect(fa_icon 'camera-retro', data: {fa_transform: 'rotate-90'}).to eq '<i class="fas fa-camera-retro" data-fa-transform="rotate-90"></i>'
-    end
+      it 'should return correct data tags' do
+        expect(send method, 'camera-retro', data: {'fa-transform': 'rotate-90'}).to eq '<i class="fas fa-camera-retro" data-fa-transform="rotate-90"></i>'
+        expect(send method, 'camera-retro', data: {fa_transform: 'rotate-90'}).to eq '<i class="fas fa-camera-retro" data-fa-transform="rotate-90"></i>'
+      end
 
-    it 'should return correct text tags' do
-      expect(fa_icon 'camera-retro', text: 'Camera').to have_tag('i', with: { class: 'fas fa-camera-retro'})
-      expect(fa_icon 'camera-retro', text: 'Camera').to have_tag('span', text: 'Camera')
-      expect(fa_icon 'camera-retro', text: 'Camera', style: 'color: Tomato;').to have_tag('span', text: 'Camera', with: {style: 'color: Tomato;'})
-      expect(fa_icon 'camera-retro', text: 'Camera', size: '3x').to have_tag('span', text: 'Camera', with: {class: 'fa5-text fa-3x'})
-    end
+      it 'should return correct text tags' do
+        expect(send method, 'camera-retro', text: 'Camera').to have_tag('i', with: { class: 'fas fa-camera-retro'})
+        expect(send method, 'camera-retro', text: 'Camera').to have_tag('span', text: 'Camera')
+        expect(send method, 'camera-retro', text: 'Camera', style: 'color: Tomato;').to have_tag('span', text: 'Camera', with: {style: 'color: Tomato;'})
+        expect(send method, 'camera-retro', text: 'Camera', size: '3x').to have_tag('span', text: 'Camera', with: {class: 'fa5-text fa-3x'})
+      end
 
-    it 'should return correct tags with symbols' do
-      expect(fa_icon :facebook, type: :brand).to eq '<i class="fab fa-facebook"></i>'
-      expect(fa_icon :camera_retro).to eq '<i class="fas fa-camera-retro"></i>'
-      expect(fa_icon [:camera_retro, :circle]).to eq '<i class="fas fa-camera-retro fa-circle"></i>'
-    end
+      it 'should return correct tags with symbols' do
+        expect(send method, :facebook, type: :brand).to eq '<i class="fab fa-facebook"></i>'
+        expect(send method, :camera_retro).to eq '<i class="fas fa-camera-retro"></i>'
+        expect(send method, [:camera_retro, :circle]).to eq '<i class="fas fa-camera-retro fa-circle"></i>'
+      end
 
-    it 'should return correct title tags' do
-      expect(fa_icon 'camera-retro', title: 'camera-title').to eq '<i class="fas fa-camera-retro" title="camera-title"></i>'
-      expect(fa_icon 'camera-retro', text: 'Camera', title: 'camera-title').to eq '<i class="fas fa-camera-retro" title="camera-title"></i><span class="fa5-text">Camera</span>'
-    end
+      it 'should return correct title tags' do
+        expect(send method, 'camera-retro', title: 'camera-title').to eq '<i class="fas fa-camera-retro" title="camera-title"></i>'
+        expect(send method, 'camera-retro', text: 'Camera', title: 'camera-title').to eq '<i class="fas fa-camera-retro" title="camera-title"></i><span class="fa5-text">Camera</span>'
+      end
 
-    it 'should return correct all tags' do
-      expect(fa_icon 'camera-retro', test: 'test').to eq '<i class="fas fa-camera-retro" test="test"></i>'
-      expect(fa_icon 'camera-retro', 'aria-hidden': true).to eq '<i class="fas fa-camera-retro" aria-hidden="true"></i>'
-      expect(fa_icon 'camera-retro', aria: {hidden: true}).to eq '<i class="fas fa-camera-retro" aria-hidden="true"></i>'
-    end
+      it 'should return correct all tags' do
+        expect(send method, 'camera-retro', test: 'test').to eq '<i class="fas fa-camera-retro" test="test"></i>'
+        expect(send method, 'camera-retro', 'aria-hidden': true).to eq '<i class="fas fa-camera-retro" aria-hidden="true"></i>'
+        expect(send method, 'camera-retro', aria: {hidden: true}).to eq '<i class="fas fa-camera-retro" aria-hidden="true"></i>'
+      end
 
-    it 'should return tags with text on right side' do
-      expect(fa_icon 'camera-retro', text: 'Camera', right: true).to eq '<span class="fa5-text-r">Camera</span><i class="fas fa-camera-retro"></i>'
+      it 'should return tags with text on right side' do
+        expect(send method, 'camera-retro', text: 'Camera', right: true).to eq '<span class="fa5-text-r">Camera</span><i class="fas fa-camera-retro"></i>'
+      end
     end
   end
 
-  describe 'fa_stacked_icon tags' do
-    it 'should return correct tags' do
-      expect(fa_stacked_icon 'camera', base: 'circle')
-          .to eq '<span class="fa-stack"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-camera fa-stack-1x"></i></span>'
+  %w(fa_stacked_icon fa5_stacked_icon).each do |method|
+    describe "#{method} tags" do
+      it 'should return correct tags' do
+        expect(send method, 'camera', base: 'circle')
+            .to eq '<span class="fa-stack"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-camera fa-stack-1x"></i></span>'
 
-      expect(fa_stacked_icon 'camera inverse', base: 'circle')
-          .to eq '<span class="fa-stack"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-camera fa-inverse fa-stack-1x"></i></span>'
+        expect(send method, 'camera inverse', base: 'circle')
+            .to eq '<span class="fa-stack"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-camera fa-inverse fa-stack-1x"></i></span>'
 
-      expect(fa_stacked_icon 'camera inverse', base: 'circle inverse')
-          .to eq '<span class="fa-stack"><i class="fas fa-circle fa-inverse fa-stack-2x"></i><i class="fas fa-camera fa-inverse fa-stack-1x"></i></span>'
+        expect(send method, 'camera inverse', base: 'circle inverse')
+            .to eq '<span class="fa-stack"><i class="fas fa-circle fa-inverse fa-stack-2x"></i><i class="fas fa-camera fa-inverse fa-stack-1x"></i></span>'
 
-      expect(fa_stacked_icon 'camera', base: 'circle', type: :far, reverse: false)
-          .to eq '<span class="fa-stack"><i class="far fa-circle fa-stack-2x"></i><i class="far fa-camera fa-stack-1x"></i></span>'
+        expect(send method, 'camera', base: 'circle', type: :far, reverse: false)
+            .to eq '<span class="fa-stack"><i class="far fa-circle fa-stack-2x"></i><i class="far fa-camera fa-stack-1x"></i></span>'
 
-      expect(fa_stacked_icon 'camera', base: 'circle', reverse: true)
-          .to eq '<span class="fa-stack"><i class="fas fa-camera fa-stack-1x"></i><i class="fas fa-circle fa-stack-2x"></i></span>'
+        expect(send method, 'camera', base: 'circle', reverse: true)
+            .to eq '<span class="fa-stack"><i class="fas fa-camera fa-stack-1x"></i><i class="fas fa-circle fa-stack-2x"></i></span>'
 
-      expect(fa_stacked_icon 'camera', base: 'circle', text: 'Text!')
-          .to eq '<span class="fa-stack"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-camera fa-stack-1x"></i></span>Text!'
+        expect(send method, 'camera', base: 'circle', text: 'Text!')
+            .to eq '<span class="fa-stack"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-camera fa-stack-1x"></i></span>Text!'
 
-      expect(fa_stacked_icon 'camera', base: 'circle', type: :fas, base_type: :far, reverse: true)
-          .to eq '<span class="fa-stack"><i class="fas fa-camera fa-stack-1x"></i><i class="far fa-circle fa-stack-2x"></i></span>'
+        expect(send method, 'camera', base: 'circle', type: :fas, base_type: :far, reverse: true)
+            .to eq '<span class="fa-stack"><i class="fas fa-camera fa-stack-1x"></i><i class="far fa-circle fa-stack-2x"></i></span>'
 
-      expect(fa_stacked_icon 'camera', base: 'circle', type: :far, base_type: :fas, reverse: true)
-          .to eq '<span class="fa-stack"><i class="far fa-camera fa-stack-1x"></i><i class="fas fa-circle fa-stack-2x"></i></span>'
-    end
+        expect(send method, 'camera', base: 'circle', type: :far, base_type: :fas, reverse: true)
+            .to eq '<span class="fa-stack"><i class="far fa-camera fa-stack-1x"></i><i class="fas fa-circle fa-stack-2x"></i></span>'
+      end
 
-    it 'should return correct tags with symbols' do
-      expect(fa_stacked_icon [:camera, :inverse], base: :circle)
-          .to eq '<span class="fa-stack"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-camera fa-inverse fa-stack-1x"></i></span>'
-      expect(fa_stacked_icon :camera, base: :circle, type: :far, reverse: false)
-          .to eq '<span class="fa-stack"><i class="far fa-circle fa-stack-2x"></i><i class="far fa-camera fa-stack-1x"></i></span>'
-    end
+      it 'should return correct tags with symbols' do
+        expect(send method, [:camera, :inverse], base: :circle)
+            .to eq '<span class="fa-stack"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-camera fa-inverse fa-stack-1x"></i></span>'
+        expect(send method, :camera, base: :circle, type: :far, reverse: false)
+            .to eq '<span class="fa-stack"><i class="far fa-circle fa-stack-2x"></i><i class="far fa-camera fa-stack-1x"></i></span>'
+      end
 
-    it 'should return correct tags with title' do
-      expect(fa_stacked_icon [:camera, :inverse], base: :circle, title: 'Camera')
-          .to eq '<span class="fa-stack" title="Camera"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-camera fa-inverse fa-stack-1x"></i></span>'
+      it 'should return correct tags with title' do
+        expect(send method, [:camera, :inverse], base: :circle, title: 'Camera')
+            .to eq '<span class="fa-stack" title="Camera"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-camera fa-inverse fa-stack-1x"></i></span>'
+      end
     end
   end
 
@@ -168,7 +172,7 @@ describe FontAwesome5Rails do
           .to eq '<span class="fa-layers fa-fw" title="LayeredIcon" style="background: MistyRose"><i class="fas fa-circle"></i></span>'
     end
   end
-  
+
   describe '[fas, far, fal, fab]_icon helper method' do
     %w(fas far fal fab).each do |type|
       it "#{type}_icon should be defined and use the right icon type" do
