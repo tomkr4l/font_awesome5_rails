@@ -1,5 +1,3 @@
-!!! Right now there is a open issue about future of this gem. Please vote and comment. [name and future of gem #40](https://github.com/tomkra/font_awesome5_rails/issues/40) !!!
-
 # Font Awesome 5 Rails
 [![Gem Version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=rb&type=6&v=0.7.0&x2=0)](https://badge.fury.io/rb/font_awesome5_rails)
 [![FA5 version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=5.9.0&x2=0)](https://github.com/tomkra/font_awesome5_rails/blob/master/lib/font_awesome5_rails/version.rb)
