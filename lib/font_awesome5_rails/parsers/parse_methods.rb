@@ -9,6 +9,8 @@ module ParseMethods
         "fal"
       when "fab", "brand"
         "fab"
+      when "fad", "duotone"
+        "fad"      
       else
         "fas"
     end
