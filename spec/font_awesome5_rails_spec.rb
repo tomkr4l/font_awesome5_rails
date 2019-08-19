@@ -85,7 +85,7 @@ describe FontAwesome5Rails do
 
       it 'should return correct tags with symbols' do
         expect(send method, :facebook, type: :brand).to eq '<i class="fab fa-facebook"></i>'
-        expect(send method, :camera_retor, type: :duotone).to eq '<i class="fad fa-camera-retro"></i>'
+        expect(send method, :camera_retro, type: :duotone).to eq '<i class="fad fa-camera-retro"></i>'
         expect(send method, :camera_retro).to eq '<i class="fas fa-camera-retro"></i>'
         expect(send method, [:camera_retro, :circle]).to eq '<i class="fas fa-camera-retro fa-circle"></i>'
       end
