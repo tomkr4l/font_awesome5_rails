@@ -35,7 +35,7 @@ module FontAwesome5
         end
       end
 
-      %w(fas far fal fab).each do |type|
+      %w(fas far fal fab fad).each do |type|
         define_method :"#{type}_icon" do |icon, options = {}|
           options[:type] = type.to_sym unless options.key? :type
           fa_icon(icon, options)

@@ -41,10 +41,12 @@ describe FontAwesome5Rails do
         expect(send method, 'camera-retro', type: :far).to eq '<i class="far fa-camera-retro"></i>'
         expect(send method, 'camera-retro', type: :fal).to eq '<i class="fal fa-camera-retro"></i>'
         expect(send method, 'camera-retro', type: :fab).to eq '<i class="fab fa-camera-retro"></i>'
+        expect(send method, 'camera-retro', type: :fad).to eq '<i class="fad fa-camera-retro"></i>'
         expect(send method, 'camera-retro', type: :solid).to eq '<i class="fas fa-camera-retro"></i>'
         expect(send method, 'camera-retro', type: :regular).to eq '<i class="far fa-camera-retro"></i>'
         expect(send method, 'camera-retro', type: :light).to eq '<i class="fal fa-camera-retro"></i>'
         expect(send method, 'camera-retro', type: :brand).to eq '<i class="fab fa-camera-retro"></i>'
+        expect(send method, 'camera-retro', type: :duotone).to eq '<i class="fad fa-camera-retro"></i>'
       end
 
       it 'should return correct class tags' do
@@ -83,6 +85,7 @@ describe FontAwesome5Rails do
 
       it 'should return correct tags with symbols' do
         expect(send method, :facebook, type: :brand).to eq '<i class="fab fa-facebook"></i>'
+        expect(send method, :camera_retor, type: :duotone).to eq '<i class="fad fa-camera-retro"></i>'
         expect(send method, :camera_retro).to eq '<i class="fas fa-camera-retro"></i>'
         expect(send method, [:camera_retro, :circle]).to eq '<i class="fas fa-camera-retro fa-circle"></i>'
       end
@@ -173,8 +176,8 @@ describe FontAwesome5Rails do
     end
   end
 
-  describe '[fas, far, fal, fab]_icon helper method' do
-    %w(fas far fal fab).each do |type|
+  describe '[fas, far, fal, fab, fad, far_stacked_icon]_icon helper method' do
+    %w(fas far fal fab fad).each do |type|
       it "#{type}_icon should be defined and use the right icon type" do
         method = :"#{type}_icon"
 
@@ -186,7 +189,7 @@ describe FontAwesome5Rails do
     end
   end
 
-  describe '[fas, far, fal, fab]_stacked_icon helper method' do
+  describe '[fas, far, fal, fab, fad]_stacked_icon helper method' do
     %w(fas far fal fab).each do |type|
       it "#{type}_stacked_icon should be defined and use the right icon type" do
         method = :"#{type}_stacked_icon"
