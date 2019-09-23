@@ -1,6 +1,6 @@
 # Font Awesome 5 Rails
-[![Gem Version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=rb&type=6&v=0.8.0&x2=0)](https://badge.fury.io/rb/font_awesome5_rails)
-[![FA5 version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=5.10.1&x2=0)](https://github.com/tomkra/font_awesome5_rails/blob/master/lib/font_awesome5_rails/version.rb)
+[![Gem Version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=rb&type=6&v=0.9.0&x2=0)](https://badge.fury.io/rb/font_awesome5_rails)
+[![FA5 version](https://d25lcipzij17d.cloudfront.net/badge.svg?id=gh&type=6&v=5.11.1&x2=0)](https://github.com/tomkra/font_awesome5_rails/blob/master/lib/font_awesome5_rails/version.rb)
 [![Build Status](https://travis-ci.org/tomkra/font_awesome5_rails.svg?branch=master)](https://travis-ci.org/tomkra/font_awesome5_rails)
 [![HitCount](http://hits.dwyl.io/tomkra/tomkra/font_awesome5_rails.svg)](http://hrits.dwyl.io/tomkra/tomkra/font_awesome5_rails)
 
@@ -12,6 +12,10 @@ Keep track of changes in [Changelog](https://github.com/tomkra/font_awesome5_rai
 
 ## Table of Contents
 **[Installation](#installation)** <br />
+  - **[Install as webfont with CSS](#install-as-webfont-with-css)** <br />  
+  - **[Install as SVG with JS](#install-as-SVG-with-JS)** <br />
+  - **[Install with webpack](#install-with-webpack)** <br />
+   
 **[Usage](#usage)** <br />
   - **[Basic usage](#basic-usage)** <br />
   - **[Solid, Regular, Light, Brand icon types](#solid-regular-light-brand-icon-types)** <br />
@@ -57,6 +61,18 @@ In your `application.js`, include the javascript file:
 ```javascript
 #= require font_awesome5
 ```
+
+### 3. Install with webpack
+If you want to install Font Awesome with ```yarn``` or ```npm``` and still use helpers from this gem It's possible.
+
+First add Font Awesome to your ```package.json```.
+```shell
+$ yarn add @fortawesome/fontawesome-free
+```
+
+Next import font in your ```app/javascript/packs/application.js```. You can find more about import in [FA pages](https://fontawesome.com/how-to-use/with-the-api/setup/importing-icons).
+
+Now you have icons installed through webpack and still you can use ```fa_icon``` helpers.
 
 ## Usage
 Gem provides FontAwesome icons through helper. In your views just call `fa_icon`.
