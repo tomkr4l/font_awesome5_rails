@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/tomkra/font_awesome5_rails.svg?branch=master)](https://travis-ci.org/tomkra/font_awesome5_rails)
 [![HitCount](http://hits.dwyl.io/tomkra/tomkra/font_awesome5_rails.svg)](http://hrits.dwyl.io/tomkra/tomkra/font_awesome5_rails)
 
-font_awesome5_rails provides the [Font-Awesome5](https://fontawesome.com/) web fonts, stylesheets and javascripts as a Rails engine for use with the asset pipeline and with backwards compatibility with [font-awesome-rails](https://github.com/bokmann/font-awesome-rails) gem.
+**font_awesome5_rails** provides the [Font-Awesome5](https://fontawesome.com/) web fonts, stylesheets and javascripts as a Rails engine for use with the asset pipeline and with backwards compatibility with [font-awesome-rails](https://github.com/bokmann/font-awesome-rails) gem.
 
 This gem provides only Free icons from Font-Awesome.
 
@@ -29,7 +29,7 @@ Keep track of changes in [Changelog](https://github.com/tomkra/font_awesome5_rai
 ## Installation
 Now you have two options how to include FontAwesome 5 icons. First option is to use ```SVG``` and ```JS``` files which is recommended by FontAwesome team. However you can use icons as ```webfont with CSS``` but you will not be able to use new FA5 features as animations or ```layered_icons```. Choose one installation option from above:
 
-Check ou the differences in [here](https://fontawesome.com/how-to-use/on-the-web/setup/getting-started?using=svg-with-js&explain=using).
+Check out the differences in [here](https://fontawesome.com/how-to-use/on-the-web/setup/getting-started?using=svg-with-js&explain=using).
 
 Add this line to your application's Gemfile:
 
