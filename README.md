@@ -12,10 +12,10 @@ Keep track of changes in [Changelog](https://github.com/tomkra/font_awesome5_rai
 
 ## Table of Contents
 **[Installation](#installation)** <br />
-  - **[Install as webfont with CSS](#install-as-webfont-with-css)** <br />  
+  - **[Install as webfont with CSS](#install-as-webfont-with-css)** <br />
   - **[Install as SVG with JS](#install-as-SVG-with-JS)** <br />
   - **[Install with webpack](#install-with-webpack)** <br />
-   
+
 **[Usage](#usage)** <br />
   - **[Basic usage](#basic-usage)** <br />
   - **[Solid, Regular, Light, Brand icon types](#solid-regular-light-brand-icon-types)** <br />
@@ -54,7 +54,8 @@ In your `application.css`, include the css file:
 ```
 or if you prefer scss add this to your `application.scss` file:
 ```sass
-@import 'font_awesome5.css';
+@import 'font_awesome5.css'; //application.scss
+@import 'font_awesome5'; //application.sass
 ```
 
 In your `application.js`, include the javascript file:
