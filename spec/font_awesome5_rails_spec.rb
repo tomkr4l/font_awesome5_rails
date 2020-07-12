@@ -146,6 +146,11 @@ describe FontAwesome5Rails do
         expect(send method, [:camera, :inverse], base: :circle, title: 'Camera')
             .to eq '<span class="fa-stack" title="Camera"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-camera fa-inverse fa-stack-1x"></i></span>'
       end
+
+      # it 'should return correct tags with base_options' do
+      #   expect(send method, 'camera', base: 'circle', base_options: { class: 'test' })
+      #     .to eq '<span class="fa-stack"><i class="fas fa-circle fa-stack-2x test"></i><i class="fas fa-camera fa-stack-1x"></i></span>'
+      # end
     end
   end
 

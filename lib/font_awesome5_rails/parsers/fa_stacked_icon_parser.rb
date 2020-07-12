@@ -8,7 +8,7 @@ class FaStackedIconParser
   def initialize(icon, options)
     @icon = icon
     @text = options[:text]
-    @reverse = options[:reverse].nil? ? false : options[:reverse]
+    @reverse = options[:reverse] == true
     @title = options[:title]
     @options = options
   end
@@ -40,5 +40,4 @@ class FaStackedIconParser
     tmp << (first ? "fa-stack-2x" : "fa-stack-1x")
     tmp.uniq.join(" ").strip
   end
-
 end

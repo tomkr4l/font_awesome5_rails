@@ -13,12 +13,12 @@ class FaIconParser
     @style = options[:style]
     @text = options[:text]
     @title = options[:title]
-    @right = options[:right] || false
+    @right = options[:right] == true
     @attrs = options.except(:text, :type, :class, :icon, :animation, :size, :right)
   end
 
   def classes
-    @classes ||= get_all_classes
+    @classes ||= parse_classes
   end
 
   def sizes
@@ -35,7 +35,7 @@ class FaIconParser
 
   private
 
-  def get_all_classes
+  def parse_classes
     tmp = []
     tmp << icon_type(@options[:type])
     tmp += arr_with_fa(@icon)
