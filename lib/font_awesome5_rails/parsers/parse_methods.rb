@@ -2,15 +2,15 @@ module ParseMethods
 
   def icon_type(type)
     return "fas" if type.nil?
-    case type.to_s
-      when "far", "regular"
+    case type.to_sym
+      when :far, :regular
         "far"
-      when "fal", "light"
+      when :fal, :light
         "fal"
-      when "fab", "brand"
+      when :fab, :brand
         "fab"
-      when "fad", "duotone"
-        "fad"      
+      when :fad, :duotone
+        "fad"
       else
         "fas"
     end
@@ -30,9 +30,9 @@ module ParseMethods
   def handle_input(input)
     case input
     when Symbol
-      input.to_s.gsub('_', '-')
+      input.to_s.dasherize
     when Array
-      input.collect{ |i| i.to_s.gsub('_', '-') }.join(' ')
+      input.join(' ').dasherize
     else
       input.to_s
     end

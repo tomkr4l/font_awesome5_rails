@@ -12,10 +12,10 @@ Keep track of changes in [Changelog](https://github.com/tomkra/font_awesome5_rai
 
 ## Table of Contents
 **[Installation](#installation)** <br />
-  - **[Install as webfont with CSS](#install-as-webfont-with-css)** <br />  
+  - **[Install as webfont with CSS](#install-as-webfont-with-css)** <br />
   - **[Install as SVG with JS](#install-as-SVG-with-JS)** <br />
   - **[Install with webpack](#install-with-webpack)** <br />
-   
+
 **[Usage](#usage)** <br />
   - **[Basic usage](#basic-usage)** <br />
   - **[Solid, Regular, Light, Brand icon types](#solid-regular-light-brand-icon-types)** <br />
@@ -43,7 +43,7 @@ In your `application.css`, include the css file:
  *= require font_awesome5_webfont
 ```
 or if you prefer scss add this to your `application.css.scss` file:
-```sass
+```scss
 @import 'font_awesome5_webfont';
 ```
 
@@ -53,9 +53,15 @@ In your `application.css`, include the css file:
  *= require font_awesome5
 ```
 or if you prefer scss add this to your `application.scss` file:
-```sass
-@import 'font_awesome5.css';
+```scss
+@import 'font_awesome5.css'; //application.scss
 ```
+
+If you're using `.sass` and having problem with loading, try to omit `.css` extenstion and import font as follows:
+```scss
+@import 'font_awesome5';
+```
+Check [issue#57](https://github.com/tomkra/font_awesome5_rails/issues/57) for details.
 
 In your `application.js`, include the javascript file:
 ```javascript

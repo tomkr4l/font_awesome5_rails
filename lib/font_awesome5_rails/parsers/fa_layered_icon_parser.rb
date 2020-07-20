@@ -15,12 +15,12 @@ class FaLayeredIconParser
   end
 
   def classes
-    @classes ||= get_all_classes
+    @classes ||= parse_classes
   end
 
   private
 
-  def get_all_classes
+  def parse_classes
     tmp = ["fa-layers"]
     tmp << "fa-fw" if @aligned
     tmp += @options[:class].split(" ") unless @options[:class].nil?
