@@ -234,6 +234,12 @@ fa_stacked_icon('camera', base: 'circle', type: :fas, base_type: :fab)
 # =>   <i class="fas fa-camera fa-stack-1x"></i>
 # => </span>
 
+fa_stacked_icon('camera', base: 'circle', type: :fas, base_type: :fab, base_options: { class: 'base' }, icon_options: { style: 'color: red' })
+# => <span class="fa-stack">
+# =>   <i class="fab fa-circle fa-stack-2x base"></i>
+# =>   <i class="fas fa-camera fa-stack-1x" style="color: red"></i>
+# => </span>
+
 ```
 
 ## Use as images
