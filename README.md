@@ -25,6 +25,7 @@ Keep track of changes in [Changelog](https://github.com/tomkra/font_awesome5_rai
 **[Use as images](#use-as-images)** <br />
 **[FontAwesome 5 Pro icons](#fontawesome-5-pro-icons)** <br />
 **[Release notes](#release-notes)** <br />
+**[Buy me a coffee](#buy-me-a-coffee)** <br />
 
 ## Installation
 Now you have two options how to include FontAwesome 5 icons. First option is to use ```SVG``` and ```JS``` files which is recommended by FontAwesome team. However you can use icons as ```webfont with CSS``` but you will not be able to use new FA5 features as animations or ```layered_icons```. Choose one installation option from above:
@@ -270,3 +271,9 @@ If you're upgrading from ```0.3.x``` version to ```0.4.x```, you might need to c
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
 [Font Awesome5 License](https://fontawesome.com/license).
+
+
+### Buy me a coffee
+If you liked this gem, you can
+<a href="https://www.buymeacoffee.com/tomkra" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+.
