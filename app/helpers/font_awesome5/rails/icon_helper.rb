@@ -16,8 +16,8 @@ module FontAwesome5
         parser = FaStackedIconParser.new(icon, options)
 
         tags = content_tag :span, class: parser.span_classes, title: parser.title do
-          content_tag(:i, nil, class: (parser.reverse ? parser.second_icon_classes : parser.first_icon_classes) ) +
-          content_tag(:i, nil, class: (parser.reverse ? parser.first_icon_classes : parser.second_icon_classes) )
+          content_tag(:i, nil, class: (parser.reverse ? parser.second_icon_classes : parser.first_icon_classes), **parser.more_options(:base_options) ) +
+          content_tag(:i, nil, class: (parser.reverse ? parser.first_icon_classes : parser.second_icon_classes), **parser.more_options(:icon_options) )
         end
         tags += parser.text unless parser.text.nil?
         tags

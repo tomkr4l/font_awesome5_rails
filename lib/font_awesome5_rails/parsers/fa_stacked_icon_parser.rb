@@ -25,6 +25,10 @@ class FaStackedIconParser
     @second_icon_classes ||= parse_icon_classes(@icon, false)
   end
 
+  def more_options(key)
+    options[key] ? options[key].except(:class, :text) : {}
+  end
+
   private
 
   def parse_span_classes
@@ -38,6 +42,8 @@ class FaStackedIconParser
     tmp << icon_type(first && @options[:base_type].present? ? @options[:base_type] : @options[:type])
     tmp += arr_with_fa(klass)
     tmp << (first ? "fa-stack-2x" : "fa-stack-1x")
+    key = first ? :base_options : :icon_options
+    tmp << options[key][:class] if options[key] && options[key][:class]
     tmp.uniq.join(" ").strip
   end
 end

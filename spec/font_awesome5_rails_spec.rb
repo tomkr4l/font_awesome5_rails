@@ -147,10 +147,23 @@ describe FontAwesome5Rails do
             .to eq '<span class="fa-stack" title="Camera"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-camera fa-inverse fa-stack-1x"></i></span>'
       end
 
-      # it 'should return correct tags with base_options' do
-      #   expect(send method, 'camera', base: 'circle', base_options: { class: 'test' })
-      #     .to eq '<span class="fa-stack"><i class="fas fa-circle fa-stack-2x test"></i><i class="fas fa-camera fa-stack-1x"></i></span>'
-      # end
+      it 'should return correct tags with base_options' do
+        expect(send method, 'camera', base: 'circle', base_options: { class: 'test' })
+          .to eq '<span class="fa-stack"><i class="fas fa-circle fa-stack-2x test"></i><i class="fas fa-camera fa-stack-1x"></i></span>'
+
+          expect(send method, 'camera', base: 'circle', base_options: { class: 'test', label: 'label' })
+          .to eq '<span class="fa-stack"><i class="fas fa-circle fa-stack-2x test" label="label"></i><i class="fas fa-camera fa-stack-1x"></i></span>'
+      end
+
+      it 'should return correct tags with icon_options' do
+        expect(send method, 'camera', base: 'circle', icon_options: { class: 'test', label: 'label' })
+        .to eq '<span class="fa-stack"><i class="fas fa-circle fa-stack-2x"></i><i class="fas fa-camera fa-stack-1x test" label="label"></i></span>'
+      end
+
+      it 'should return correct tags with base_options and icon_options' do
+        expect(send method, 'camera', base: 'circle', icon_options: { class: 'icon', label: 'icon' }, base_options: { class: 'base', aria: 'base' })
+        .to eq '<span class="fa-stack"><i class="fas fa-circle fa-stack-2x base" aria="base"></i><i class="fas fa-camera fa-stack-1x icon" label="icon"></i></span>'
+      end
     end
   end
 
