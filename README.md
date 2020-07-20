@@ -43,7 +43,7 @@ In your `application.css`, include the css file:
  *= require font_awesome5_webfont
 ```
 or if you prefer scss add this to your `application.css.scss` file:
-```sass
+```scss
 @import 'font_awesome5_webfont';
 ```
 
@@ -53,10 +53,15 @@ In your `application.css`, include the css file:
  *= require font_awesome5
 ```
 or if you prefer scss add this to your `application.scss` file:
-```sass
+```scss
 @import 'font_awesome5.css'; //application.scss
-@import 'font_awesome5'; //application.sass
 ```
+
+If you're using `.sass` and having problem with loading, try to omit `.css` extenstion and import font as follows:
+```scss
+@import 'font_awesome5';
+```
+Check [issue#57](https://github.com/tomkra/font_awesome5_rails/issues/57) for details.
 
 In your `application.js`, include the javascript file:
 ```javascript
