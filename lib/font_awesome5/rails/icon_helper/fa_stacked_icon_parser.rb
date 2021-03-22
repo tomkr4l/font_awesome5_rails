@@ -5,7 +5,7 @@ module FontAwesome5
     class FaStackedIconParser
       include ParseMethods
 
-      attr_reader :reverse, :options, :span_classes, :first_icon_classes, :second_icon_classes, :text, :title
+      attr_reader :reverse, :options, :text, :title
 
       def initialize(icon, options)
         @icon = icon

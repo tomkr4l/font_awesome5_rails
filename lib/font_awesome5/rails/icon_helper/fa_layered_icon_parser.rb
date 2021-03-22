@@ -7,7 +7,6 @@ module FontAwesome5
 
       attr_reader :aligned, :style, :size, :title
 
-
       def initialize(options)
         @aligned = options[:aligned].nil? ? true : options[:aligned]
         @style = options[:style]
@@ -23,10 +22,10 @@ module FontAwesome5
       private
 
       def parse_classes
-        tmp = ["fa-layers"]
-        tmp << "fa-fw" if @aligned
-        tmp += @options[:class].split(" ") unless @options[:class].nil?
-        tmp.uniq.join(" ").strip
+        tmp = ['fa-layers']
+        tmp << 'fa-fw' if @aligned
+        tmp += @options[:class].split(' ') unless @options[:class].nil?
+        tmp.uniq.join(' ').strip
       end
 
     end
