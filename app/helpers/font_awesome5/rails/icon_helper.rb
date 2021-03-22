@@ -1,11 +1,10 @@
-require "font_awesome5_rails/parsers/fa_icon_parser"
-require "font_awesome5_rails/parsers/fa_layered_icon_parser"
-require "font_awesome5_rails/parsers/fa_stacked_icon_parser"
+require 'font_awesome5/rails/icon_helper/fa_icon_parser'
+require 'font_awesome5/rails/icon_helper/fa_layered_icon_parser'
+require 'font_awesome5/rails/icon_helper/fa_stacked_icon_parser'
 
 module FontAwesome5
   module Rails
     module IconHelper
-
       def fa5_icon(icon, options = {})
         parser = FaIconParser.new(icon, options)
         parser.get_content_tag
