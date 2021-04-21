@@ -7,13 +7,13 @@ module FontAwesome5
     module IconHelper
 
       def fa5_icon(icon, options = {})
-        parser = FaIconParser.new(icon, options)
+        parser = FontAwesome5Rails::Parsers::FaIconParser.new(icon, options)
         parser.get_content_tag
       end
       alias_method :fa_icon, :fa5_icon
 
       def fa5_stacked_icon(icon, options = {})
-        parser = FaStackedIconParser.new(icon, options)
+        parser = FontAwesome5Rails::Parsers::FaStackedIconParser.new(icon, options)
 
         tags = content_tag :span, class: parser.span_classes, title: parser.title do
           content_tag(:i, nil, class: (parser.reverse ? parser.second_icon_classes : parser.first_icon_classes), **parser.more_options(:base_options) ) +
@@ -25,7 +25,7 @@ module FontAwesome5
       alias_method :fa_stacked_icon, :fa5_stacked_icon
 
       def fa_layered_icon(options = {}, &block)
-        parser = FaLayeredIconParser.new(options)
+        parser = FontAwesome5Rails::Parsers::FaLayeredIconParser.new(options)
         if parser.size.nil?
           content_tag(:span, class: parser.classes, title: parser.title, style: parser.style, &block)
         else
