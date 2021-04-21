@@ -1,11 +1,11 @@
-require_relative "parse_methods"
+require_relative 'parse_methods'
 
 module FontAwesome5Rails
   module Parsers
     class FaStackedIconParser
       include ParseMethods
 
-      attr_reader :reverse, :options, :span_classes, :first_icon_classes, :second_icon_classes, :text, :title
+      attr_reader :reverse, :options, :text, :title
 
       def initialize(icon, options)
         @icon = icon
@@ -34,19 +34,19 @@ module FontAwesome5Rails
       private
 
       def parse_span_classes
-        tmp = ["fa-stack"]
-        tmp += @options[:class].split(" ") unless @options[:class].nil?
-        tmp.uniq.join(" ").strip
+        tmp = ['fa-stack']
+        tmp += @options[:class].split(' ') unless @options[:class].nil?
+        tmp.uniq.join(' ').strip
       end
 
       def parse_icon_classes(klass, first)
         tmp = []
         tmp << icon_type(first && @options[:base_type].present? ? @options[:base_type] : @options[:type])
         tmp += arr_with_fa(klass)
-        tmp << (first ? "fa-stack-2x" : "fa-stack-1x")
+        tmp << (first ? 'fa-stack-2x' : 'fa-stack-1x')
         key = first ? :base_options : :icon_options
         tmp << options[key][:class] if options[key] && options[key][:class]
-        tmp.uniq.join(" ").strip
+        tmp.uniq.join(' ').strip
       end
     end
   end

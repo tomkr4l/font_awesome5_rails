@@ -1,14 +1,13 @@
-require "font_awesome5_rails/parsers/fa_icon_parser"
-require "font_awesome5_rails/parsers/fa_layered_icon_parser"
-require "font_awesome5_rails/parsers/fa_stacked_icon_parser"
+require 'font_awesome5_rails/parsers/fa_icon_parser'
+require 'font_awesome5_rails/parsers/fa_layered_icon_parser'
+require 'font_awesome5_rails/parsers/fa_stacked_icon_parser'
 
 module FontAwesome5
   module Rails
     module IconHelper
 
       def fa5_icon(icon, options = {})
-        parser = FontAwesome5Rails::Parsers::FaIconParser.new(icon, options)
-        parser.get_content_tag
+        FontAwesome5Rails::Parsers::FaIconParser.new(icon, options).tag
       end
       alias_method :fa_icon, :fa5_icon
 
@@ -16,9 +15,10 @@ module FontAwesome5
         parser = FontAwesome5Rails::Parsers::FaStackedIconParser.new(icon, options)
 
         tags = content_tag :span, class: parser.span_classes, title: parser.title do
-          content_tag(:i, nil, class: (parser.reverse ? parser.second_icon_classes : parser.first_icon_classes), **parser.more_options(:base_options) ) +
-          content_tag(:i, nil, class: (parser.reverse ? parser.first_icon_classes : parser.second_icon_classes), **parser.more_options(:icon_options) )
+          content_tag(:i, nil, class: (parser.reverse ? parser.second_icon_classes : parser.first_icon_classes), **parser.more_options(:base_options)) +
+          content_tag(:i, nil, class: (parser.reverse ? parser.first_icon_classes : parser.second_icon_classes), **parser.more_options(:icon_options))
         end
+
         tags += parser.text unless parser.text.nil?
         tags
       end
@@ -26,12 +26,11 @@ module FontAwesome5
 
       def fa_layered_icon(options = {}, &block)
         parser = FontAwesome5Rails::Parsers::FaLayeredIconParser.new(options)
-        if parser.size.nil?
-          content_tag(:span, class: parser.classes, title: parser.title, style: parser.style, &block)
-        else
-          content_tag :div, class: "fa-#{parser.size}" do
-            content_tag(:span, class: parser.classes, title: parser.title, style: parser.style, &block)
-          end
+        tag = content_tag(:span, class: parser.classes, title: parser.title, style: parser.style, &block)
+        return tag if parser.size.nil?
+
+        content_tag :div, class: "fa-#{parser.size}" do
+          tag
         end
       end
 
