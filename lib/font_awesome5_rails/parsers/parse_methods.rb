@@ -1,20 +1,20 @@
 module FontAwesome5Rails
   module Parsers
     module ParseMethods
-
       def icon_type(type)
-        return "fas" if type.nil?
+        return 'fas' if type.nil?
+
         case type.to_sym
         when :far, :regular
-          "far"
+          'far'
         when :fal, :light
-          "fal"
+          'fal'
         when :fab, :brand
-          "fab"
+          'fab'
         when :fad, :duotone
-          "fad"
+          'fad'
         else
-          "fas"
+          'fas'
         end
       end
 
@@ -24,7 +24,7 @@ module FontAwesome5Rails
 
       def arr_with_fa(array)
         array = handle_input(array)
-        array.split(" ").map { |s| prepend_fa(s) }
+        array.split(' ').map { |s| prepend_fa(s) }
       end
 
       private

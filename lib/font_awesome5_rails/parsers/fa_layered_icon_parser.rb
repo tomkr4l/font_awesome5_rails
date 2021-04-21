@@ -1,4 +1,4 @@
-require_relative "parse_methods"
+require_relative 'parse_methods'
 
 module FontAwesome5Rails
   module Parsers
@@ -22,10 +22,10 @@ module FontAwesome5Rails
       private
 
       def parse_classes
-        tmp = ["fa-layers"]
-        tmp << "fa-fw" if @aligned
-        tmp += @options[:class].split(" ") unless @options[:class].nil?
-        tmp.uniq.join(" ").strip
+        tmp = ['fa-layers']
+        tmp << 'fa-fw' if @aligned
+        tmp += @options[:class].split(' ') unless @options[:class].nil?
+        tmp.uniq.join(' ').strip
       end
     end
   end

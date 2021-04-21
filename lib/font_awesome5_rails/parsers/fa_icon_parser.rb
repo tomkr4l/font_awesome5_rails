@@ -24,15 +24,13 @@ module FontAwesome5Rails
       end
 
       def sizes
-        @sizes ||= @options[:size].nil? ? "" : arr_with_fa(@options[:size]).uniq.join(" ").strip
+        @sizes ||= @options[:size].nil? ? '' : arr_with_fa(@options[:size]).uniq.join(' ').strip
       end
 
-      def get_content_tag
-        if @text.nil?
-          icon_content_tag
-        else
-          @right ? (text_content_tag + icon_content_tag) : (icon_content_tag + text_content_tag)
-        end
+      def tag
+        return icon_content_tag if @text.nil?
+
+        @right ? (text_content_tag + icon_content_tag) : (icon_content_tag + text_content_tag)
       end
 
       private
@@ -41,10 +39,10 @@ module FontAwesome5Rails
         tmp = []
         tmp << icon_type(@options[:type])
         tmp += arr_with_fa(@icon)
-        tmp += @options[:class].split(" ") unless @options[:class].nil?
+        tmp += @options[:class].split(' ') unless @options[:class].nil?
         tmp += arr_with_fa(@options[:size]) unless @options[:size].nil?
         tmp += arr_with_fa(@options[:animation]) unless @options[:animation].nil?
-        tmp.uniq.join(" ").strip
+        tmp.uniq.join(' ').strip
       end
 
       def icon_content_tag
@@ -52,7 +50,8 @@ module FontAwesome5Rails
       end
 
       def text_content_tag
-        content_tag(:span, @text, class: "#{@right ? 'fa5-text-r' : 'fa5-text'}#{' ' unless sizes.blank?}#{sizes}", style: @style)
+        content_tag(:span, @text, class: "#{@right ? 'fa5-text-r' : 'fa5-text'}#{' ' unless sizes.blank?}#{sizes}",
+                                  style: @style)
       end
     end
   end
