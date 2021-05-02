@@ -33,6 +33,11 @@ module FontAwesome5Rails
         @right ? (text_content_tag + icon_content_tag) : (icon_content_tag + text_content_tag)
       end
 
+      def file
+        file = Rails.application.assets.resolve("fa5/#{icon_type_path(@options[:type])}/#{@icon}.svg").first
+        file.present? ? URI.parse(file).path : nil
+      end
+
       private
 
       def parse_classes
