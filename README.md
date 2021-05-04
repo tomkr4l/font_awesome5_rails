@@ -23,6 +23,7 @@ Keep track of changes in [Changelog](https://github.com/tomkra/font_awesome5_rai
   - **[Layered and Stacked icons](#layered-and-stacked-icons)** <br />
 
 **[Use as images](#use-as-images)** <br />
+**[Use inline SVGs](#use-inline-svgs)** <br />
 **[FontAwesome 5 Pro icons](#fontawesome-5-pro-icons)** <br />
 **[Release notes](#release-notes)** <br />
 **[Buy me a coffee](#buy-me-a-coffee)** <br />
@@ -254,6 +255,22 @@ image_tag('fa5/regular/bell.svg', width: '100px', class: 'my-img')
 More examples can be found in specs.
 
 More animation and data attributes can be found on [FontAwesome documentation](https://fontawesome.com/how-to-use/svg-with-js).
+
+
+## Use inline SVGs
+You can also include icons as inline SVGs in your views directly, avoiding any JS entirely.
+```ruby
+fa_inline_icon('camera') # defaults to solid
+fa_inline_icon('camera', style: :solid)
+fa_inline_icon('camera', class: 'my-svg')
+```
+
+There are also helpers for the various styles available:
+```ruby
+fas_inline_icon('camera')
+fab_inline_icon('facebook')
+far_inline_icon('bell')
+```
 
 ## FontAwesome 5 Pro icons
 Due to licence policy this gem pack only free FA5 icons. However ```fa_icon``` helper support all types of icons. If you purchased FA5 Pro icons and want to use helpers provided by this gem it's possible.
