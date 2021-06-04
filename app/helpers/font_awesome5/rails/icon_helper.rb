@@ -5,6 +5,7 @@ require 'font_awesome5_rails/parsers/fa_stacked_icon_parser'
 module FontAwesome5
   module Rails
     module IconHelper
+      ICON_TYPES = %w(fas far fal fab fad fak).freeze
 
       def fa5_icon(icon, options = {})
         FontAwesome5Rails::Parsers::FaIconParser.new(icon, options).tag
@@ -34,7 +35,7 @@ module FontAwesome5
         end
       end
 
-      %w(fas far fal fab fad).each do |type|
+      ICON_TYPES.each do |type|
         define_method :"#{type}_icon" do |icon, options = {}|
           options[:type] = type.to_sym unless options.key? :type
           fa_icon(icon, options)

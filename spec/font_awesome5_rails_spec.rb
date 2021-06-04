@@ -43,11 +43,13 @@ describe FontAwesome5Rails do
         expect(send(subject, 'camera-retro', type: :fal)).to eq '<i class="fal fa-camera-retro"></i>'
         expect(send(subject, 'camera-retro', type: :fab)).to eq '<i class="fab fa-camera-retro"></i>'
         expect(send(subject, 'camera-retro', type: :fad)).to eq '<i class="fad fa-camera-retro"></i>'
+        expect(send(subject, 'camera-retro', type: :fak)).to eq '<i class="fak fa-camera-retro"></i>'
         expect(send(subject, 'camera-retro', type: :solid)).to eq '<i class="fas fa-camera-retro"></i>'
         expect(send(subject, 'camera-retro', type: :regular)).to eq '<i class="far fa-camera-retro"></i>'
         expect(send(subject, 'camera-retro', type: :light)).to eq '<i class="fal fa-camera-retro"></i>'
         expect(send(subject, 'camera-retro', type: :brand)).to eq '<i class="fab fa-camera-retro"></i>'
         expect(send(subject, 'camera-retro', type: :duotone)).to eq '<i class="fad fa-camera-retro"></i>'
+        expect(send(subject, 'camera-retro', type: :uploaded)).to eq '<i class="fak fa-camera-retro"></i>'
       end
 
       it 'should return correct class tags' do

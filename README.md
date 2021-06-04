@@ -104,17 +104,18 @@ fa_icon(:camera_retro, text: 'Camera', right: true)
 # => <i class="fas fa-camera-retro"></i>
 ```
 
-### Solid, Regular, Light, Brand, Duotone icon types
+### Solid, Regular, Light, Brand, Duotone, Uploaded icon types
 In Font Awesome 5 there are several different types of icons. In font_awesome5_rails gem default icon type is ```solid```.
 If you want to use different icon style you can do this through ```type``` attribute.
 
-| Style         | type: | type:  |
-| ------------- |-------|--------|
-| Solid         | :fas  |:solid  |
-| Regular       | :far  |:regular|
-| Light         | :fal  |:light  |
-| Brand         | :fab  |:brand  |
-| Duotone       | :fad  |:duotone|
+|Style        | type: | type:   |
+|-------------|-------|---------|
+|Solid        | :fas  |:solid   |
+|Regular      | :far  |:regular |
+|Light        | :fal  |:light   |
+|Brand        | :fab  |:brand   |
+|Duotone      | :fad  |:duotone |
+|Kit Uploaded | :fak  |:uploaded|
 
 
 ```ruby
@@ -135,6 +136,12 @@ fa_icon('camera-retro', type: :duotone)
 
 fa_icon('camera-retro', type: :fab)
 # => <i class="fab fa-camera-retro"></i>
+
+fa_icon('custom-uploaded', type: :fak)
+# => <i class="fak fa-custom-uploaded"></i>
+
+fa_icon('custom-uploaded', type: :uploaded)
+# => <i class="fak fa-custom-uploaded"></i>
 
 ```
 
