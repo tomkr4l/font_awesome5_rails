@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    font_awesome5_rails (1.4.0)
+    font_awesome5_rails (1.5.0)
       nokogiri (>= 1.11.3)
       railties (>= 4.2)
 
