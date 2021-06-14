@@ -7,6 +7,18 @@ module FontAwesome5
     module IconHelper
       ICON_TYPES = %w(fas far fal fab fad fak).freeze
 
+      def fa_inline_icon(icon, options = {})
+        file = FontAwesome5Rails::Parsers::FaIconParser.new(icon, options).file
+        return nil unless Pathname.new(file).exist?
+
+        doc = Nokogiri::XML(File.read(file))
+        svg = doc.root
+        svg[:fill] = 'currentColor'
+        classes = [options[:class], svg[:class]].flatten.compact.join ' '
+        svg[:class] = classes if classes
+        ActiveSupport::SafeBuffer.new(svg.to_s)
+      end
+
       def fa5_icon(icon, options = {})
         FontAwesome5Rails::Parsers::FaIconParser.new(icon, options).tag
       end
@@ -39,6 +51,11 @@ module FontAwesome5
         define_method :"#{type}_icon" do |icon, options = {}|
           options[:type] = type.to_sym unless options.key? :type
           fa_icon(icon, options)
+        end
+
+        define_method :"#{type}_inline_icon" do |icon, options = {}|
+          options[:type] = type.to_sym unless options.key? :type
+          fa_inline_icon(icon, options)
         end
 
         define_method :"#{type}_stacked_icon" do |icon, options = {}|

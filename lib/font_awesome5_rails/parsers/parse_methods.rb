@@ -20,6 +20,23 @@ module FontAwesome5Rails
         end
       end
 
+      def icon_type_path(type)
+        return 'solid' if type.nil?
+
+        case type.to_sym
+        when :far, :regular
+          'regular'
+        when :fal, :light
+          'light'
+        when :fab, :brand
+          'brands'
+        when :fad, :duotone
+          'duotone'
+        else
+          'solid'
+        end
+      end
+
       def prepend_fa(string)
         "fa-#{string}"
       end

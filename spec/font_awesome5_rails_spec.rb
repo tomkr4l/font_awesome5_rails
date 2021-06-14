@@ -198,6 +198,15 @@ describe FontAwesome5Rails do
     end
   end
 
+  describe 'fa_inline_icon tags' do
+    it 'should return correct tags' do
+      expect(send(:fa_inline_icon,
+                  'square')).to match '<path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48z"/>'
+      expect(send(:fa_inline_icon,
+                  'square', type: :regular)).to match '<path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-6 400H54c-3.3 0-6-2.7-6-6V86c0-3.3 2.7-6 6-6h340c3.3 0 6 2.7 6 6v340c0 3.3-2.7 6-6 6z"/>'
+    end
+  end
+
   describe '[fas, far, fal, fab, fad, far_stacked_icon]_icon helper method' do
     %w(fas far fal fab fad).each do |type|
       it "#{type}_icon should be defined and use the right icon type" do
@@ -205,8 +214,21 @@ describe FontAwesome5Rails do
 
         expect(self).to respond_to(method)
         expect(send(method, 'camera-retro')).to eq "<i class=\"#{type} fa-camera-retro\"></i>"
-        expect(send(method, 'camera-retro', type: :fal)).to eq "<i class=\"fal fa-camera-retro\"></i>"
-        expect(send(method, 'camera-retro', type: :brand, class: 'test')).to eq "<i class=\"fab fa-camera-retro test\"></i>"
+        expect(send(method, 'camera-retro', type: :fal)).to eq '<i class="fal fa-camera-retro"></i>'
+        expect(send(method, 'camera-retro', type: :brand,
+                                            class: 'test')).to eq '<i class="fab fa-camera-retro test"></i>'
+      end
+    end
+  end
+
+  describe '[fas, far]_inline_icon helper method' do
+    %w[fas far].each do |type|
+      it "#{type}_inline_icon should be defined and use the right icon type" do
+        method = :"#{type}_inline_icon"
+
+        expect(self).to respond_to(method)
+        expect(send(method,
+                    'square')).to match '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" class="">'
       end
     end
   end
