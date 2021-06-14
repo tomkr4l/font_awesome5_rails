@@ -13,6 +13,8 @@ module FontAwesome5Rails
           'fab'
         when :fad, :duotone
           'fad'
+        when :fak, :uploaded
+          'fak'
         else
           'fas'
         end
