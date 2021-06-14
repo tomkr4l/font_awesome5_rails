@@ -6,6 +6,8 @@ module FontAwesome5Rails
       include ActionView::Helpers::TagHelper
       include ParseMethods
 
+      GEM_PATH = Pathname.new('../../../../').expand_path(__FILE__)
+
       attr_reader :icon, :options, :data, :style, :text, :title, :right, :attrs
 
       def initialize(icon, options)
@@ -31,6 +33,11 @@ module FontAwesome5Rails
         return icon_content_tag if @text.nil?
 
         @right ? (text_content_tag + icon_content_tag) : (icon_content_tag + text_content_tag)
+      end
+
+      def file
+        file = GEM_PATH.join("app/assets/images/fa5/#{icon_type_path(@options[:type])}/#{@icon}.svg")
+        file.exist? ? file : nil
       end
 
       private
