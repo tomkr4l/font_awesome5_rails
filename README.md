@@ -82,6 +82,37 @@ Next import font in your ```app/javascript/packs/application.js```. You can find
 
 Now you have icons installed through webpack and still you can use ```fa_icon``` helpers.
 
+### 4. Install webfont with CSS Bundling and Propshaft
+
+To install the webfont on Rails 7+ with [Propshaft][] and [CSS Bundling][] (using Dart Sass), follow these instructions.
+
+First, add Font Awesome 5 to your ```package.json```:
+
+```shell
+$ npm install "@fortawesome/fontawesome-free@^5.0.0"
+```
+
+Then, copy the fonts to `app/assets`:
+
+```shell
+$ mkdir -p app/assets/fonts
+$ cp -a node_modules/@fortawesome/fontawesome-free/webfonts app/assets/fonts/
+```
+
+Finally, add this to your `app/assets/stylesheets/application.sass.scss`:
+
+```scss
+$fa-font-path: "/webfonts";
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/regular";
+@import "@fortawesome/fontawesome-free/scss/solid";
+@import "@fortawesome/fontawesome-free/scss/brands";
+@import "@fortawesome/fontawesome-free/scss/v4-shims";
+```
+
+[CSS Bundling]: https://github.com/rails/cssbundling-rails
+[Propshaft]: https://github.com/rails/propshaft
+
 ## Usage
 Gem provides FontAwesome icons through helper. In your views just call `fa_icon`.
 
