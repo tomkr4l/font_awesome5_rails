@@ -31,13 +31,13 @@ module FontAwesome5Rails
           "fa-sharp fa-light"
         when :fashf, :sharp_thin
           "fa-sharp fa-thin"
-        when :fadsh, :sharp_duotone
+        when :fashd, :sharp_duotone
           "fa-sharp-duotone fa-solid"
-        when :fadshr, :sharp_duotone_regular
-          "fa-sharp-duotone fa-solid"
-        when :fadshl, :sharp_duotone_light
+        when :fashdr, :sharp_duotone_regular
+          "fa-sharp-duotone fa-regular"
+        when :fashdl, :sharp_duotone_light
           "fa-sharp-duotone fa-light"
-        when :fadshf, :sharp_duotone_thin
+        when :fashdf, :sharp_duotone_thin
           "fa-sharp-duotone fa-thin"
         when :fak, :uploaded
           "fa-kit"
