@@ -2,21 +2,47 @@ module FontAwesome5Rails
   module Parsers
     module ParseMethods
       def icon_type(type)
-        return 'fas' if type.nil?
+        return "fa-solid" if type.nil?
 
         case type.to_sym
+        when :fas, :solid
+          "fa-solid"
         when :far, :regular
-          'far'
+          "fa-regular"
         when :fal, :light
-          'fal'
+          "fa-light"
+        when :fat, :thin
+          "fa-thin"
         when :fab, :brand
-          'fab'
+          "fa-brands"
         when :fad, :duotone
-          'fad'
+          "fa-duotone fa-solid"
+        when :fadr, :duotone_regular
+          "fa-duotone fa-regular"
+        when :fadl, :duotone_light
+          "fa-duotone fa-light"
+        when :fadt, :duotone_thin
+          "fa-duotone fa-thin"
+        when :fash, :sharp
+          "fa-sharp fa-solid"
+        when :fashr, :sharp_regular
+          "fa-sharp fa-regular"
+        when :fashl, :sharp_light
+          "fa-sharp fa-light"
+        when :fashf, :sharp_thin
+          "fa-sharp fa-thin"
+        when :fadsh, :sharp_duotone
+          "fa-sharp-duotone fa-solid"
+        when :fadshr, :sharp_duotone_regular
+          "fa-sharp-duotone fa-solid"
+        when :fadshl, :sharp_duotone_light
+          "fa-sharp-duotone fa-light"
+        when :fadshf, :sharp_duotone_thin
+          "fa-sharp-duotone fa-thin"
         when :fak, :uploaded
-          'fak'
+          "fa-kit"
         else
-          'fas'
+          "fa-solid"
         end
       end
 
