@@ -5,7 +5,7 @@ require 'font_awesome5_rails/parsers/fa_stacked_icon_parser'
 module FontAwesome5
   module Rails
     module IconHelper
-      ICON_TYPES = %w(fas far fal fab fad fak).freeze
+      ICON_TYPES = %w[fas far fal fat fab fad fadr fadl fadt fash fashr fashl fashf fashd fashdr fashdl fashdf fak].freeze
 
       def fa_inline_icon(icon, options = {})
         file = FontAwesome5Rails::Parsers::FaIconParser.new(icon, options).file
