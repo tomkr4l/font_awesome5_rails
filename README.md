@@ -82,37 +82,6 @@ Next import font in your ```app/javascript/packs/application.js```. You can find
 
 Now you have icons installed through webpack and still you can use ```fa_icon``` helpers.
 
-### 4. Install webfont with CSS Bundling and Propshaft
-
-To install the webfont on Rails 7+ with [Propshaft][] and [CSS Bundling][] (using Dart Sass), follow these instructions.
-
-First, add Font Awesome 5 to your ```package.json```:
-
-```shell
-$ npm install "@fortawesome/fontawesome-free@^5.0.0"
-```
-
-Then, copy the fonts to `app/assets`:
-
-```shell
-$ mkdir -p app/assets/fonts
-$ cp -a node_modules/@fortawesome/fontawesome-free/webfonts app/assets/fonts/
-```
-
-Finally, add this to your `app/assets/stylesheets/application.sass.scss`:
-
-```scss
-$fa-font-path: "/webfonts";
-@import "@fortawesome/fontawesome-free/scss/fontawesome";
-@import "@fortawesome/fontawesome-free/scss/regular";
-@import "@fortawesome/fontawesome-free/scss/solid";
-@import "@fortawesome/fontawesome-free/scss/brands";
-@import "@fortawesome/fontawesome-free/scss/v4-shims";
-```
-
-[CSS Bundling]: https://github.com/rails/cssbundling-rails
-[Propshaft]: https://github.com/rails/propshaft
-
 ## Usage
 Gem provides FontAwesome icons through helper. In your views just call `fa_icon`.
 
@@ -136,7 +105,7 @@ fa_icon(:camera_retro, text: 'Camera', right: true)
 # => <i class="fas fa-camera-retro"></i>
 ```
 
-### Solid, Regular, Light, Brand, Duotone, Uploaded icon types
+### Solid, Regular, Light, Thin, Brand, Duotone, Sharp, Duotone Sharp, Uploaded icon types
 In Font Awesome 5 there are several different types of icons. In font_awesome5_rails gem default icon type is ```solid```.
 If you want to use different icon style you can do this through ```type``` attribute.
 
@@ -146,7 +115,19 @@ If you want to use different icon style you can do this through ```type``` attri
 |Regular      | :far  |:regular |
 |Light        | :fal  |:light   |
 |Brand        | :fab  |:brand   |
+|Thin         | :fat  |:thin    |
 |Duotone      | :fad  |:duotone |
+|Duotone Regular| :fadr |:duotone_regular |
+|Duotone Light | :fadl |:duotone_light |
+|Duotone Thin  | :fadt |:duotone_thin |
+|Sharp        | :fash |:sharp   |
+|Sharp Regular| :fashr |:sharp_regular |
+|Sharp Light  | :fashl |:sharp_light |
+|Sharp Thin   | :fashf |:sharp_thin |
+|Sharp Duotone| :fashd|:sharp_duotone|
+|Sharp Duotone Regular| :fashdr |:sharp_duotone_regular |
+|Sharp Duotone Light | :fashdl |:sharp_duotone_light |
+|Sharp Duotone Thin  | :fashdf |:sharp_duotone_thin |
 |Kit Uploaded | :fak  |:uploaded|
 
 
